@@ -400,7 +400,7 @@ NeoBundle 'lyokha/vim-xkbswitch.git' "Autoswitch on <esc> with libxkb needs xkb-
 Идеал не достигнут. Чтобы его получить можно например написать кастомный переключатель, который работает
 без определений вроде
 
-{% highlight shell %}
+{% highlight sh %}
 setxkbmap -option keypad:pointerkeys -layout 'us,ru' -variant altgr-intl \
     -option 'grp:alt_shift_toggle' -option ctrl:nocaps
 {% endhighlight %}
