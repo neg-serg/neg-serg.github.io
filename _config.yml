@@ -9,7 +9,7 @@ dropcap:          true # dropcap theme
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
 url:              https://github.com/karloespiritu/blackdoc
-baseurl:          /
+baseurl:          
 #url:        	  http://hmfaysal.github.io
 version:          1.0.0
 
