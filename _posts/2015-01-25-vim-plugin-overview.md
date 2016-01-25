@@ -479,7 +479,10 @@ NeoBundle 'sombr/vim-scala-worksheet.git' "tiny Vim plugin that turns your file 
 Интересный плагин, который позволяет интерактивно использовать scala c помощью
 создания любого файла с расширением \*.scalaws код рассматривается
 и выполняется worksheet. Очень удобно в плане работы, подходит даже для
-взаимодействия с большими проектами, которые используют akka
+взаимодействия с большими проектами, которые используют akka. Кстати не совместима со
+многими плагинами и поддерживается плохо, но по крайней мере очень приятна в плане
+использования. Для этого плагина лучше всего использовать отдельный instance vim, с
+отдельным упрощенным конфигом и набором плагинов для него.
 
 {% highlight vim %}
 NeoBundle 'ensime/ensime-vim' "scala vim autocompletion
@@ -582,15 +585,38 @@ NeoBundle 'janko-m/vim-test.git' "easy testing for various langs
 
 {% highlight vim %}
 NeoBundle 'tpope/vim-dispatch.git' "provide async build via tmux
+{% endhighlight %}
+Очень полезный плагин, который я воспринимаю прежде всего как 
+middleware для интеграции различных программ, tmux и vim. Как результат
+это позволяет получить удобную и красивую асинхронную компиляцию, которая
+не затрагивает текущий инстанс вима и не мешает работе в нем. При этом по
+завершении работы мы можем видеть скажем результаты ошибок и вывода make и
+других команд в quickfix с удобной навигацией по всему этому. Очень удобно,
+нужно и замечательно, наряду с youcompleteme.
+
+{% highlight vim %}
 if executable(resolve(expand("rc")))
     NeoBundle 'lyuts/vim-rtags.git' "rtags plugin for vim
 endif
+{% endhighlight %}
+Простая поддержка rtags. До emacs'овской пока не дотягивает, но в перспективе
+должно расширить возможности рефакторинга. Несколько сложновато в настройке
+и использовании и требует перекомпиляции.
+
+{% highlight vim %}
 if executable(resolve(expand("ghci")))
     NeoBundle 'ujihisa/neco-ghc' "autocomplete for hs using ghc-mod
     NeoBundle 'eagletmt/ghcmod-vim.git'
     NeoBundle 'bitc/vim-hdevtools' "type-related features
     NeoBundle 'neg-serg/vim2hs' "better haskell syntax hi with better indenting
 endif            
+{% endhighlight %}
+Пачка плагинов для поддержки haskell в vim. neco-ghc используется для автодополения,
+ghcmod и hdevtools добавляют всякие удобные фичи связанные с типами и т.д., также я
+использую собственный небольшой форк vim2hs с улучшенным indent'ом, потому что стандартный,
+то есть тот который входит в vim2hs, мне не нравится.
+
+{% highlight vim %}
 if executable(resolve(expand("ruby")))
     NeoBundle 'vim-ruby/vim-ruby' "ruby autocompletion
     NeoBundle 'tpope/vim-rails.git' "rails plugin from Tim Pope
@@ -600,9 +626,31 @@ if executable(resolve(expand("ruby")))
     NeoBundle 'vim-scripts/dbext.vim' "provides database access to many dbms
     NeoBundle 'skalnik/vim-vroom' "plugin to run ruby tests
 endif
+{% endhighlight %}
+Набор плагинов для ruby. Для автодополнения я использую vim-ruby, некоторые
+используют vim-monster. Мне если честно не очень нравятся результаты, которые
+он выдает, так что я его не использую, но, вероятно пока что его использование
+может иметь смысл, потому что vim-ruby в neovim точно не работает, а вот
+vim-monster я ещё не проверял.
+
+{% highlight vim %}
 NeoBundle 'shawncplus/phpcomplete.vim.git' "better than default phpcomplete.vim
+{% endhighlight %}
+Автодополнение есть и для php.
+
+{% highlight vim %}
 " Multi-language DBGP debugger client for Vim (PHP, Python, Perl, Ruby, etc.)
 NeoBundleLazy 'joonty/vdebug', { 'autoload': { 'commands': 'VdebugStart' }}
+{% endhighlight %}
+Интерейс дебаггера для множества языков, который тестировался как минимум для
+PHP, Python, Ruby, Perl, Tcl и NodeJS. Как утверждает автор возможно
+взаимодействие с любым, который использует DBGP протокол, в частности Xdebug
+для PHP. В очереди на проверку, честно говоря мне это было как-то особо не
+нужно, потому я что я в этих случаях всегда пользовался командной строкой
+и gdb, а для других языков мне это было не нужно. Тем не менее штука интересная
+и на неё стоит обратить внимание.
+
+{% highlight vim %}
 " html5 autocomplete and syntax
 NeoBundleLazy 'othree/html5.vim' , {'autoload': {'filetypes': ['html', 'htmldjango']} }
 NeoBundle 'fatih/vim-nginx' "nginx runtime files
