@@ -53,8 +53,7 @@ future:      true
 highlighter: pygments
 markdown:    redcarpet
 github: [Repository metadata]
-paginate:    1
-paginate_path: "page:num"
+paginate:    5
 
 # Permalinks https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:        pretty
