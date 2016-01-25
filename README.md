@@ -1,1 +1,0 @@
-# neg-serg.github.io
