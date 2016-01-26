@@ -1,5 +1,5 @@
 title:            Neg Code blog
-tagline:          Black Theme for Jekyll
+tagline:          Neg Code blog
 description:      "Neg Code blog"
 logo:             logo3.png
 disqus_shortname: Neg
@@ -52,8 +52,8 @@ timezone:    Europe/Moscow
 future:      true
 highlighter: pygments
 markdown:    redcarpet
+paginate:    1
 github: [Repository metadata]
-paginate:    5
 
 # Permalinks https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:        pretty
