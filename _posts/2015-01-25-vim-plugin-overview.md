@@ -23,9 +23,7 @@ Vim - обзор плагинов
 
 ## YouCompleteMe
 
-{% highlight vim %}
-NeoBundle 'Valloric/YouCompleteMe'
-{% endhighlight %}
+### Valloric/YouCompleteMe
 
 Первый у нас это youcompleteme, про который я уже рассказывал. Это быстрый
 и удобный автокомплитер для vim. Также есть биндинги для emacs, atom и других
@@ -197,10 +195,8 @@ endif
 
 ## fzf и другой fuzzy-finding
 
-{% highlight vim %}
-NeoBundle 'junegunn/fzf'     "to work with fzf-vim
-NeoBundle 'junegunn/fzf.vim' "use fzf plug for vim
-{% endhighlight %}
+### junegunn/fzf
+### junegunn/fzf.vim
 
 Сладкая парочка плагинов, которая добавляет поддержку fzf в vim. Штука эта
 очень хорошая, но как по мне недостаточно фичастая. Раньше вроде как был
@@ -266,9 +262,7 @@ ruby, в отличие от всего остального немногосл�
 
 ## Раскраски
 
-{% highlight vim %}
-NeoBundle 'luochen1990/rainbow'
-{% endhighlight %}
+### luochen1990/rainbow
 
 Это раскраска скобочек всеми цветами радуги для vim. Достоинства в том что она
 есть и вроде как худо-бедно поддерживается. Недостатки как по мне в том что
@@ -283,32 +277,25 @@ otommod/rainbow у меня ломает подсветку, а оригинал
 вот на этой картинке:
 ![Rainbow](https://i.ytimg.com/vi/3ozPypdOUcM/maxresdefault.jpg)
 
-{% highlight vim %}
-NeoBundle 'chrisbra/colorizer'
-    \, { 'autoload': { 'commands': ['ColorToggle'] } } "ascii to colors
-{% endhighlight %}
+### chrisbra/colorizer
 
 ![Terminal Coloring](https://raw.githubusercontent.com/chrisbra/Colorizer/master/Colorizer.gif)
 
-{% highlight vim %}
-NeoBundle 'vimez/vim-tmux' "syntax hi for tmux
-NeoBundle 'elzr/vim-json' "syntax hi for json format
-NeoBundle 'cespare/vim-toml' "syntax hi for toml format
-NeoBundle 'rsmenon/vim-mathematica.git' "Mathematica syntax and omnicomp
-NeoBundle 'jelera/vim-javascript-syntax.git' "js highlighting
-NeoBundle 'tpope/vim-git' "syntax, indent, and filetype plugin files for git
-NeoBundle 'ekalinin/Dockerfile.vim' "dockerfile hi
-NeoBundle 'jnwhiteh/vim-golang.git' "golang syntax highlight
-NeoBundleLazy 'farseer90718/vim-regionsyntax', { 'filetypes' : ['vimwiki', 'markdown', 'tex', 'html'] }
-NeoBundle 'JulesWang/css.vim' "better css syntax hi
-NeoBundle 'leafo/moonscript-vim' "basic moonscript support
-NeoBundle 'rodjek/vim-puppet' "basic puppet support
-if !has("nvim") && has("ololo")
-    NeoBundle 'bbchung/clighter.git' "hi with clang
-elseif has("nvim")
-    NeoBundle 'bbchung/Clamp' "clighterr for neovim
-endif
-{% endhighlight %}
+### vimez/vim-tmux
+### elzr/vim-json
+### cespare/vim-toml
+### rsmenon/vim-mathematica.git
+### jelera/vim-javascript-syntax.git
+### tpope/vim-git
+### ekalinin/Dockerfile.vim
+### jnwhiteh/vim-golang.git
+### farseer90718/vim-regionsyntax
+### JulesWang/css.vim
+### leafo/moonscript-vim
+### rodjek/vim-puppet
+### bbchung/clighter.git
+### bbchung/Clamp
+
 Компания плагинов для синтаксиса разных типов файлов. В общем-то рассказать
 особо нечего, кроме последнего. Эти два плагина используют clang для
 семантической раскраски. Получается в общем-то даже лучше, чем, в настоящий
@@ -322,17 +309,13 @@ endif
 Плагин для перевода esc-последовательностей в раскраску vim. Иногда это нужно,
 а иногда приятно. Больше добавить особо нечего.
 
-{% highlight vim %}
-NeoBundle 'Shougo/neomru.vim.git' "mru for unite
-{% endhighlight %}
+### Shougo/neomru.vim.git
 
 Для того чтобы получать список последних использованных файлов. Это очень удобно.
 Из достоинств: standalone, так что теоретически можно настроить интеграцию с fzf.
 Используется в интеграции с Unite.
 
-{% highlight vim %}
-NeoBundle 'Shougo/unite.vim.git' "unite for creating ui
-{% endhighlight %}
+### Shougo/unite.vim.git
 
 Комбайн для построения классного TUI для vim, чего там только нет. Прямого
 аналога не имеет. Разумеется очень рекомендуется. Как мне сказали
@@ -340,64 +323,37 @@ NeoBundle 'Shougo/unite.vim.git' "unite for creating ui
 посмотреть на workflow этого плагина можно обратиться к 
 <a href="https://www.youtube.com/watch?v=fwqhBSxhGU0&hd=1">следующему  видео</a>
 
-{% highlight vim %}
-NeoBundle 'mopp/autodirmake.vim.git' "automake dir which didnt exists
-{% endhighlight %}
+### mopp/autodirmake.vim.git
 
 Небольшой плагин для автосоздания директорий. Удобно.
 
-{% highlight vim %}
-NeoBundle 'Shougo/vimfiler.vim', {
-            \ 'depends' : 'Shougo/unite.vim', 'commands' : [
-            \ { 'name' : 'VimFiler', 'complete' : 'customlist,vimfiler#complete' },
-            \ { 'name' : 'VimFilerTab', 'complete' : 'customlist,vimfiler#complete' },
-            \ { 'name' : 'VimFilerExplorer', 'complete' : 'customlist,vimfiler#complete' },
-            \ { 'name' : 'Edit', 'complete' : 'customlist,vimfiler#complete' },
-            \ { 'name' : 'Write', 'complete' : 'customlist,vimfiler#complete' },
-            \ 'Read', 'Source'],
-            \ 'mappings' : '<Plug>(vimfiler_', 'explorer' : 1, }
-{% endhighlight %}
-
-{% highlight vim %}
-if !has("nvim")
-    NeoBundle 'Shougo/vimshell.vim' "shell inside a vim for unite and vimfiler integration
-endif
-{% endhighlight %}
+### Shougo/vimshell.vim
 
 Shell внутри vim. Честно говоря особо и не нужно. В neovim и так встроено. Пожалуй от его
 использования я откажусь в будущем.
 
-{% highlight vim %}
-NeoBundleLazy 'Shougo/unite-outline', { 'unite_sources' : 'outline' }
-{% endhighlight %}
+### Shougo/unite-outline
 
 Приблуда к unite для быстрой навигации по файлу. В чем-то удобнее чем tagbar
 и иже с ним, но нужно не часто.
 
-{% highlight vim %}
-NeoBundle 'junkblocker/unite-codesearch' "junkblocker google codesearch wrapper
-{% endhighlight %}
+### junkblocker/unite-codesearch
 
 Интеграция unite с google code-search. Это форк, так что нужно использовать
 именно его, с кастомным codesearch от того же автора. В принципе можно
 использовать для поиска по большим базам кода, но это скорее актуально для
 Google Inc у которой счет количества строк кода идет на миллиарды.
 
-{% highlight vim %}
-NeoBundle 'Shougo/junkfile.vim.git' "junkfile for unite
-{% endhighlight %}
+### Shougo/junkfile.vim.git
+
 Удобное создание временных файлов. Прелесть этого плагина 
 мне ещё предстоит на себе испытать, но в целом нужно.
 
-{% highlight vim %}
-NeoBundle 'Shougo/neossh.vim.git' "work with ssh easier
-{% endhighlight %}
+### Shougo/neossh.vim.git
 Для удобной работы с буферами через ssh. Помнится встроенный netrw мне в этом
 плане показался более сложным и неудобным, а благодаря этому плагину всё ок.
 
-{% highlight vim %}
-NeoBundle 'vim-scripts/ViewOutput.git' "VO commandline output
-{% endhighlight %}
+### vim-scripts/ViewOutput.git
 Более простой и удобный способ перенаправления команд vim, чем стандартный
 redir. Никем давно не поддерживается, но это и не нужно. Использование очень
 простое достаточно вбить что-то вроде
@@ -408,35 +364,26 @@ redir. Никем давно не поддерживается, но это и �
 
 ## Работа с кодом
 
-{% highlight vim %}
-NeoBundle 'rhysd/vim-clang-format.git' "format code by clang, better than astyle -A14
-{% endhighlight %}
+### rhysd/vim-clang-format.git
+
 Простой плагин для семантического выравнивания кода. По сути не делает ничего,
 просто вызывает clang-format. А вот сам clang-format штука очень хорошая.
 Отличается от аналогов тем что учитывает AST. В результате это получается
 как по мне куда лучше аналогов вроде astyle и других.
 
-{% highlight vim %}
-NeoBundle 'SirVer/ultisnips.git' "Snippets with ycm compatibility
-{% endhighlight %}
+### SirVer/ultisnips.git
 
 Самый крутой движок для сниппетов в vim. Nuff-said, в общем-то.
 Безальтернативен из-за поддержки youcompleteme. Обладает довольно
 богатыми возможностями по кастомизации, за которыми лучше обратиться
 к документации на его github-странице.
 
-{% highlight vim %}
-NeoBundle 'godlygeek/tabular.git' "for tabularizing
-{% endhighlight %}
+### godlygeek/tabular.git
 
-{% highlight vim %}
-if executable(resolve(expand("ack")))
-    NeoBundle 'mileszs/ack.vim' "ack wrapper
-endif
-if executable(resolve(expand("ag")))
-    NeoBundle 'rking/ag.vim.git' "ag (ack replacement) wrapper
-endif
-{% endhighlight %}
+Один из плагинов для автовыравнивания, много функций, поэтому и использую.
+
+### mileszs/ack.vim
+### rking/ag.vim.git
 
 Интеграция поисковиков ag и ack. Это такие аналоги grep. Честно говоря если
 unite работает без них, то не нужно, надо проверить. Для тех кто не слышал
@@ -446,9 +393,7 @@ ack отличается более приятным выводом в stdout и
 также silver_search, но в настоящее время не развивается, потому что
 все его преимущества уже включены в ag.
 
-{% highlight vim %}
-NeoBundleLazy 'tpope/vim-repeat', { 'mappings' : '.' } "dot for everything
-{% endhighlight %}
+### tpope/vim-repeat
 
 Повторение через точку для большего количества команд, чем по умолчанию
 предусмотрено в vim. Собственно имеется в виду поддержка некоторых 
@@ -456,38 +401,29 @@ NeoBundleLazy 'tpope/vim-repeat', { 'mappings' : '.' } "dot for everything
 commentary и vim-easyclip, большая часть из которых от того же автора,
 то есть Tim Pope. Используется не очень-то активно.
 
-{% highlight vim %}
-NeoBundle 'tpope/vim-eunuch.git' "for SudoWrite, Locate, Find etc
-{% endhighlight %}
+### tpope/vim-eunuch.git
 
 Дополнительные встроенные в vim команды. Мой любимчик это SudoWrite, потому что
 я всё предпочитаю редактировать через один и тот же instance vim'а.
 
-{% highlight vim %}
-NeoBundleLazy 'sjl/gundo.vim', { 'commands' : 'GundoToggle' }
-{% endhighlight %}
+### sjl/gundo.vim
 
 Дерево отмены. Нужно, используется частенько, когда нужно отменить что-то после
 redo. Использование простое и наглядное, не вижу смысла что-то писать, очень
 полезный хороший плагин.
 
-{% highlight vim %}
-NeoBundleLazy 'Raimondi/delimitMate', { 'insert' : 1 } "autopair ()[]{}
-{% endhighlight %}
+### Raimondi/delimitMate
 
 Автоподстановка скобок для vim. Сначала кажется что не нужно, потом без этого жить
 не можешь. Безальтернативен из-за поддержки в youcompleteme.
 
-{% highlight vim %}
-NeoBundleLazy 'scrooloose/syntastic', { 'insert' : 1 } "syntax checker
-{% endhighlight %}
+### scrooloose/syntastic
 
 Проверка синтаксиса в vim. Одна из тех вещей, которая нужна чтобы сделать vim
 похожим на IDE. Также имеет поддержку youcompleteme.
 
-{% highlight vim %}
-NeoBundle 'nathanaelkane/vim-indent-guides' "indent tabs visually with |-es too slow
-{% endhighlight %}
+### nathanaelkane/vim-indent-guides
+
 Подветка отступов с помощью изменения цвета background.
 Аналоги(https://github.com/Yggdroot/indentLine) не подходят из-за конфликта
 с переопределением цвета conceal. Дело в том что по крайней мере для темной
@@ -496,36 +432,26 @@ NeoBundle 'nathanaelkane/vim-indent-guides' "indent tabs visually with |-es too 
 для операторов. По крайней мере я люблю использовать полноценные лямбды
 вместо *\* в haskell.
 
-{% highlight vim %}
-NeoBundle 'thinca/vim-qfreplace.git' "visual replace for multiple files
-{% endhighlight %}
+### thinca/vim-qfreplace.git
 
 Довольно необычный способ взаимодействия с Quickfix. для того чтобы понять что
 это можно посмотреть вот это видео: https://vimeo.com/24700977
 
-{% highlight vim %}
-NeoBundle 'c9s/vimomni.vim' "autocompletion for VimL
-{% endhighlight %}
+### c9s/vimomni.vim
 omni-completion для vim. Иногда работает, иногда не очень. Не нужно если использовать
 neocomplete например.
 
-{% highlight vim %}
-NeoBundleLazy 'majutsushi/tagbar', { 'commands' : 'TagbarToggle' }
-{% endhighlight %}
+### majutsushi/tagbar
 Список тегов, используются довольно часто. Лучше всех прямых аналогов,
 но для непосредственного поиска по тегам лучше использовать что-то ещё.
 
-{% highlight vim %}
-NeoBundle 'chrisbra/vim-diff-enhanced.git' "patience diff
-{% endhighlight %}
+### chrisbra/vim-diff-enhanced.git
 Улучшенная реализация diff с более грамотным алгоритмом. Используется редко, но
 метко, когда нужно обновить программу, в которой было сделано много изменений
 это помогает, особенно если там отличаются отступы. Ещё один плюс в том что
 позволяет выбрать алгоритм для diff.
 
-{% highlight vim %}
-NeoBundle 'sombr/vim-scala-worksheet.git' "tiny Vim plugin that turns your file into interactive worksheet
-{% endhighlight %}
+### sombr/vim-scala-worksheet.git
 Интересный плагин, который позволяет интерактивно использовать scala c помощью
 создания любого файла с расширением \*.scalaws код рассматривается
 и выполняется worksheet. Очень удобно в плане работы, подходит даже для
@@ -534,120 +460,83 @@ NeoBundle 'sombr/vim-scala-worksheet.git' "tiny Vim plugin that turns your file 
 использования. Для этого плагина лучше всего использовать отдельный instance vim, с
 отдельным упрощенным конфигом и набором плагинов для него.
 
-{% highlight vim %}
-NeoBundle 'ensime/ensime-vim' "scala vim autocompletion
-{% endhighlight %}
+### ensime/ensime-vim
 Система для поддержки scala для разных редакторов, в том числе vim. Установка
 и настройка требует некоторых телодвижений, но в целом удобно. Поддерживает
 отладку, навигацию, семантическую подсветку, автодополнение, проверку типов
 и семантическое форматирование, в общем мастхэв для скалиста.
 
-{% highlight vim %}
-NeoBundle 'derekwyatt/vim-scala' "various initial scala support for vim
-NeoBundle 'derekwyatt/vim-sbt' "basic SBT support for vim
-{% endhighlight %}
+### derekwyatt/vim-scala
+### derekwyatt/vim-sbt
 Добавляет некоторую простую поддержку scala и sbt в vim без автодополнения
 и прочих фич IDE. Если использовать ensime, то возможно большого смысла
 в этих плагинах и нет, надо подумать.
 
-{% highlight vim %}
-NeoBundle 'tpope/vim-commentary.git' "try it instead of tcomment
-{% endhighlight %}
+### tpope/vim-commentary.git
 Простой авторасстановщик комментариев. Выделели область или textobj,
 скомандовали gc и готово! Очень просто и удобно. От аналогов, насколько
 я помню, отличается большей простотой. Можно легко добавлять поддержку
 собственных типов через автокоманды.
 
-{% highlight vim %}
-NeoBundle 'tpope/vim-endwise' "to insert endif for if, end for begin and so on
-{% endhighlight %}
+### tpope/vim-endwise
 Автоматическое добавление парных слов для разных языков. Достаточно удобно, 
 хотя и не немного дебильное, не помешала бы поддержка семантики, интересно
 узнать есть ли что-то лучше. Активно поддерживается.
 
-{% highlight vim %}
-NeoBundle 'tpope/vim-unimpaired.git' "good mappings and toggles
-{% endhighlight %}
+### tpope/vim-unimpaired.git
 Всякие разнообразные кастомизации от Tim Pope. Довольно неплохая совместимость
 с существующими плагинами, так что всё ок, лучше обратиться к документации за
 подробностями.
 
-{% highlight vim %}
-NeoBundle 'dbakker/vim-projectroot' "better rooter
-{% endhighlight %}
+### dbakker/vim-projectroot
 Удобный детект текущей директории проекта. Нужно, поскольку autochdir не всегда
 корректно работает для автокоманд vim, а ручной переход медленно и лениво,
 а так нажали cd в режиме редактирования и готово! Детект происходит благодаря
 директориям вроде *.git* и прочим, также это поведение можно легко
 кастомизировать или даже переписать, потому что плагин не сложный.
 
-{% highlight vim %}
-NeoBundle 'Valloric/ListToggle.git' "toggle quickfix and location list <leader>l by def
-{% endhighlight %}
+### Valloric/ListToggle.git
 Простой плагин для вкл/выкл quickfix window. У меня забинджено на qq.
 Используется частенько.
 
-{% highlight vim %}
-NeoBundle 'derekwyatt/vim-fswitch.git' "switching between companion source files (e.g. .h and .cpp)
-{% endhighlight %}
+### derekwyatt/vim-fswitch.git
 Простой плагин для переключения между сорцом и хедером. У меня забинджено на
 control+a в режиме редактирования. Используется достаточно часто. Из
 недостатков: по-видимому не хватает guard'а на тот случай, если данный тип
 файлов не поддерживается, надо допилить.
 
-{% highlight vim %}
-NeoBundle 'vim-scripts/IndentConsistencyCop.git' "autochecks for indent
-NeoBundle 'hynek/vim-python-pep8-indent.git' "python autoindent pep8 compatible
-NeoBundle 'fs111/pydoc.vim' , {'autoload': {'filetypes': ['python']} } "pydoc integration
-{% endhighlight %}
+### vim-scripts/IndentConsistencyCop.git
+### hynek/vim-python-pep8-indent.git
+### fs111/pydoc.vim
 Всякие мелкие плагины для поддержки python, которые не связаны с автодополнением.
 
-{% highlight vim %}
-if executable("mono")
-    NeoBundleLazy 'nosami/Omnisharp.git', { 'filetypes' : 'cs' } "omnisharp completion
-endif
-{% endhighlight %}
+### nosami/Omnisharp.git
 Автодополнение для c#, есть поддержка в youcompleteme. Требует создания или
 файла проекта.
 
-{% highlight vim %}
-if executable(resolve(expand("gotags")))
-    NeoBundle 'jstemmer/gotags.git' "tags for go
-endif
-if executable(resolve(expand("go")))
-    NeoBundle 'Blackrush/vim-gocode.git' "omnicomplete for go
-    NeoBundle 'fatih/vim-go.git' "golang support
-endif
-{% endhighlight %}
+### jstemmer/gotags.git
+### Blackrush/vim-gocode.git
+### fatih/vim-go.git
 Теги для go и некоторая поддержка для этого языка, в частности автодополнение.
-{% highlight vim %}
-if executable(resolve(expand("rustc")))
-    NeoBundle 'rust-lang/rust.vim' "detection of rust files
-    NeoBundle 'jtdowney/vimux-cargo' "rust-cargo bindings
-endif
-{% endhighlight %}
+
+### rust-lang/rust.vim
+### jtdowney/vimux-cargo
 Поддержка детекта rust, улучшенный(на момент написания поста) syntax
 highlighting для rust, а также поддержка асинхронной работы cargo с через tmux.
 Также поддерживается семантическое форматирование.
 
-{% highlight vim %}
-NeoBundleLazy 'vim-perl/vim-perl', { 'filetypes' : 'perl' }
-NeoBundleLazy 'wannesm/wmgraphviz.vim', { 'filetypes' : 'dot' }
-NeoBundle 'sbl/scvim.git' "vim plugin for supercollider
-NeoBundle 'xolox/vim-lua-ftplugin.git' "test lua bindings
-NeoBundle 'oscarh/vimerl' "vim erlang support
-{% endhighlight %}
-Простая поддержка для языков perl, dot, supercollider, erlang и lua. Из
+### vim-perl/vim-perl
+### wannesm/wmgraphviz.vim
+### sbl/scvim.git
+### xolox/vim-lua-ftplugin.git
+### oscarh/vimerl
+Простая поддержка для языков perl, dot(graphviz), supercollider, erlang и lua. Из
 последнего поддержка lua получше, но конечно не такая хорошая как хотелось бы.
 
-{% highlight vim %}
-NeoBundle 'janko-m/vim-test.git' "easy testing for various langs
-{% endhighlight %}
+### janko-m/vim-test.git
 Универсальный плагин для тестирования на разных языках.
 
-{% highlight vim %}
-NeoBundle 'tpope/vim-dispatch.git' "provide async build via tmux
-{% endhighlight %}
+### tpope/vim-dispatch.git
 Очень полезный плагин, который я воспринимаю прежде всего как 
 middleware для интеграции различных программ, tmux и vim. Как результат
 это позволяет получить удобную и красивую асинхронную компиляцию, которая
@@ -656,54 +545,37 @@ middleware для интеграции различных программ, tmux
 других команд в quickfix с удобной навигацией по всему этому. Очень удобно,
 нужно и замечательно, наряду с youcompleteme.
 
-{% highlight vim %}
-if executable(resolve(expand("rc")))
-    NeoBundle 'lyuts/vim-rtags.git' "rtags plugin for vim
-endif
-{% endhighlight %}
+### lyuts/vim-rtags.git
 Простая поддержка rtags. До emacs'овской пока не дотягивает, но в перспективе
 должно расширить возможности рефакторинга. Несколько сложновато в настройке
 и использовании и требует перекомпиляции.
 
-{% highlight vim %}
-if executable(resolve(expand("ghci")))
-    NeoBundle 'ujihisa/neco-ghc' "autocomplete for hs using ghc-mod
-    NeoBundle 'eagletmt/ghcmod-vim.git'
-    NeoBundle 'bitc/vim-hdevtools' "type-related features
-    NeoBundle 'neg-serg/vim2hs' "better haskell syntax hi with better indenting
-endif            
-{% endhighlight %}
+### ujihisa/neco-ghc
+### eagletmt/ghcmod-vim.git
+### bitc/vim-hdevtools
+### neg-serg/vim2hs
 Пачка плагинов для поддержки haskell в vim. neco-ghc используется для автодополения,
 ghcmod и hdevtools добавляют всякие удобные фичи связанные с типами и т.д., также я
 использую собственный небольшой форк vim2hs с улучшенным indent'ом, потому что стандартный,
 то есть тот который входит в vim2hs, мне не нравится.
 
-{% highlight vim %}
-if executable(resolve(expand("ruby")))
-    NeoBundle 'vim-ruby/vim-ruby' "ruby autocompletion
-    NeoBundle 'tpope/vim-rails.git' "rails plugin from Tim Pope
-    NeoBundle 'tpope/vim-rake.git' "ruby rake support
-    NeoBundle 'tpope/vim-rbenv.git' "ruby rbenv support
-    NeoBundle 'tpope/vim-bundler' "ruby bundler support
-    NeoBundle 'vim-scripts/dbext.vim' "provides database access to many dbms
-    NeoBundle 'skalnik/vim-vroom' "plugin to run ruby tests
-endif
-{% endhighlight %}
+### vim-ruby/vim-ruby
+### tpope/vim-rails.git
+### tpope/vim-rake.git
+### tpope/vim-rbenv.git
+### tpope/vim-bundler
+### vim-scripts/dbext.vim
+### skalnik/vim-vroom
 Набор плагинов для ruby. Для автодополнения я использую vim-ruby, некоторые
 используют vim-monster. Мне если честно не очень нравятся результаты, которые
 он выдает, так что я его не использую, но, вероятно пока что его использование
 может иметь смысл, потому что vim-ruby в neovim точно не работает, а вот
 vim-monster я ещё не проверял.
 
-{% highlight vim %}
-NeoBundle 'shawncplus/phpcomplete.vim.git' "better than default phpcomplete.vim
-{% endhighlight %}
+### shawncplus/phpcomplete.vim.git
 Автодополнение есть и для php.
 
-{% highlight vim %}
-" Multi-language DBGP debugger client for Vim (PHP, Python, Perl, Ruby, etc.)
-NeoBundleLazy 'joonty/vdebug', { 'autoload': { 'commands': 'VdebugStart' }}
-{% endhighlight %}
+### joonty/vdebug
 Интерейс дебаггера для множества языков, который тестировался как минимум для
 PHP, Python, Ruby, Perl, Tcl и NodeJS. Как утверждает автор возможно
 взаимодействие с любым, который использует DBGP протокол, в частности Xdebug
@@ -712,19 +584,13 @@ PHP, Python, Ruby, Perl, Tcl и NodeJS. Как утверждает автор �
 и gdb, а для других языков мне это было не нужно. Тем не менее штука интересная
 и на неё стоит обратить внимание.
 
-{% highlight vim %}
-NeoBundleLazy 'othree/html5.vim' , {'autoload': {'filetypes': ['html', 'htmldjango']} }
-{% endhighlight %}
+### othree/html5.vim
 Плагин для поддержки html5. Толком не помню что он там делает :D
 
-{% highlight vim %}
-NeoBundle 'szw/vim-tags' "autogen ctags
-if executable(resolve(expand("gtags")))
-    NeoBundle 'yuki777/gtags.vim.git' "Gtags v0.64
-    NeoBundle 'bbchung/gasynctags.git' "autogenerate gtags to cscope db
-    NeoBundle 'tranngocthachs/gtags-cscope-vim-plugin.git' "gtags-cscope navigation
-endif
-{% endhighlight %}
+### szw/vim-tags
+### yuki777/gtags.vim.git
+### bbchung/gasynctags.git
+### tranngocthachs/gtags-cscope-vim-plugin.git
 Vim-tags это автогенерация тегов для ctags. Не использую, видимо добавил для
 порядка, потому что easytags люто, бешено тормозит весь вим, а для всего
 остального я всё равно использую gtags, благо он поддерживает большое
@@ -732,48 +598,36 @@ Vim-tags это автогенерация тегов для ctags. Не исп�
 плагин, который идет вместе с дистрибутивом gnu global. В целом всю эту кухню
 я вроде как довольно подробно описывал в своей статье "vim как ide".
 
-{% highlight vim %}
-NeoBundle 'lervag/vimtex' "LaTeX-Box replacement
-{% endhighlight %}
+### lervag/vimtex
 Простая, но работающая latex в vim. Не auctex для emacs, конечно, но пойдет. По
 крайней мере диплом на около 100 страниц без воды был написан с помощью этого
 плагина.
 
-{% highlight vim %}
-NeoBundle 'rstacruz/sparkup.git' "write html code faster
-{% endhighlight %}
+### rstacruz/sparkup.git
 Позволяет быстро набивать html-код с помощью чего-то вроде сниппетов. Возможно я откажусь
 от него, потому что есть подозрения, что он немного криво работает с markdown, короче говоря
 надо подумать, но в любом случае плагин интересный.
 
-{% highlight vim %}
-NeoBundle 'Valloric/vim-instant-markdown' "realtime markdown preview
-{% endhighlight %}
+### Valloric/vim-instant-markdown
 Автоматически позволяет видеть изменения в файле по мере его редактирования(сохранения).
 Я где-то это использовал, но сейчас оно мне особо не надо, в частности в этом блоге используется
 jekyll, который тоже использует markdown, но смысла во всем этом нет, потому что содержимое браузера
 и так автообновляется средствами самого jekyll, а для гитхаба я сложные README пока не делал.
 
-{% highlight vim %}
-NeoBundleLazy 'marijnh/tern_for_vim', { 'autoload': { 'filetypes': ['javascript'] } }
-{% endhighlight %}
+### marijnh/tern_for_vim
 Очень хорошая поддержка js, когда я тестировал прекрасно работало. Семантическое автодополнение.
 Возможно сейчас это не особо нужно из-за поддержки в youcompleteme, надо потестировать.
 
 
 ## Поддержка git
 
-{% highlight vim %}
-if executable(resolve(expand("git")))
-    NeoBundle 'tpope/vim-fugitive.git' "Git stuff. Needed for powerline etc
-    NeoBundle 'junegunn/vim-github-dashboard.git' "Git dashboard in vim
-    NeoBundle 'jaxbot/github-issues.vim.git' "github issues autocomp
-    NeoBundle 'idanarye/vim-merginal.git' "to handle branches/merge conflicts
-    NeoBundle 'junegunn/gv.vim' "yet another git commit browser
-    NeoBundle 'vim-scripts/DirDiff.vim.git' "diff directories easyer with vim
-    NeoBundle 'airblade/vim-gitgutter.git' "last changes
-endif
-{% endhighlight %}
+### tpope/vim-fugitive.git
+### junegunn/vim-github-dashboard.git
+### jaxbot/github-issues.vim.git
+### idanarye/vim-merginal.git
+### junegunn/gv.vim
+### vim-scripts/DirDiff.vim.git
+### airblade/vim-gitgutter.git
 Пачка плагинов для поддержки git в vim. Здесь самый главный это fugitive,
 также мне очень нравится смотреть последние коммиты с помощью GV. Думаю добавить
 это в интеграцию одной своей приблуды, про которую я расскажу чуть позже, чтобы
@@ -784,14 +638,10 @@ endif
 
 ## Tmux
 
-{% highlight vim %}
-if executable(resolve(expand("tmux")))
-    NeoBundle 'tpope/vim-tbone.git' "tmux basics
-    NeoBundle 'benmills/vimux.git' "exec commands in tmux
-    NeoBundle 'christoomey/vim-tmux-navigator' "easy jump between windows
-    NeoBundle 'epeli/slimux' "better interaction with tmux
-endif
-{% endhighlight %}
+### tpope/vim-tbone.git
+### benmills/vimux.git
+### christoomey/vim-tmux-navigator
+### epeli/slimux
 Различные плагины для взаимодействия с tmux. Из них выделю
 christoomey/vim-tmux-navigator который позволяет прыгать между буферами tmux
 с помощью тех же хоткеев, что и между vim. И прозрачно. Словно это одна и та же
@@ -800,61 +650,41 @@ christoomey/vim-tmux-navigator который позволяет прыгать 
 
 ## Всякие разности
 
-{% highlight vim %}
-NeoBundleLazy 'chrisbra/unicode.vim', { 'commands' : ['UnicodeComplete','UnicodeGA', 'UnicodeTable'] } "better digraphs
-{% endhighlight %}
+### chrisbra/unicode.vim
 Улучшенная поддержка диграфов в vim. На любителя.
 ![Better unicode support](https://camo.githubusercontent.com/1cf1562c8ebf06decd05537b5c51d7081b307224/68747470733a2f2f63687269736272612e6769746875622e696f2f76696d2d73637265656e63617374732f756e69636f64652d73637265656e636173742e676966)
 
-{% highlight vim %}
-NeoBundle 'kana/vim-gf-user.git' "framework open file by context
-NeoBundle 'kana/vim-gf-diff.git' "go to the changed block under the cursor from diff output
-NeoBundle 'mattn/gf-user-vimfn.git' "vim-gf-user extension: jump Vim script function
-NeoBundle 'mkomitee/vim-gf-python.git' "gf for python
-{% endhighlight %}
+### kana/vim-gf-user.git
+### kana/vim-gf-diff.git
+### mattn/gf-user-vimfn.git
+### mkomitee/vim-gf-python.git
 Различные плагины, которые направлены на улучшение поддержки команды gf для
 навигации по всяким файлам и прочим сущностям. Для тех кто в танке эта
 команда по умолчанию позволяет прыгнуть на файл под курсором.
 
-{% highlight vim %}
-" There is no need in fixkey for nvim because of it's default behaviour
-if !has("nvim")
-    NeoBundle 'drmikehenry/vim-fixkey' "fixes key codes for console Vim
-endif
-{% endhighlight %}
-
+### drmikehenry/vim-fixkey
 Очень полезный плагин, для добавления поддерки mod1(alt) хоткеев в консольный вим.
 В neovim это уже не нужно. Используется прежде всего для поддержки моих хоткеев,
 которые переносят часть из emacs(вроде c-a в начало строки), о которых стоит
 рассказать отдельно.
 
-{% highlight vim %}
-NeoBundle 'ReekenX/vim-rename2.git' "rename for files even with spaces in filename
-{% endhighlight %}
+### ReekenX/vim-rename2.git
 Переименование текущего файла прямо из vim. Иногда нужно, но можно обойтись и без него,
 если для вас критично количество плагинов, которые вы используете.
 
-{% highlight vim %}
-NeoBundle 'thinca/vim-ref.git' "integrated reference viewer man/perldoc etc
-{% endhighlight %}
+### thinca/vim-ref.git
 Расширение функциональности просмотра документации.
 
-{% highlight vim %}
-NeoBundle 'othree/eregex.vim' "Perl-like extended regex for vim
-{% endhighlight %}
+### othree/eregex.vim
 Улучшенный поисковик с поддержкой pcre регулярных выражений. Лично я использую
 редко, потому что как правило когда попадаю в такую ситуацию, то я в командной
 строке, а не виме.
 
-{% highlight vim %}
-NeoBundle 'chrisbra/Join.git' "Extended and fast Join for vim
-{% endhighlight %}
+### chrisbra/Join.git
 Плагин, который ускоряет команду join. Также можно немного кастомизировать.
 Нужно проверить так ли это актуально в настоящий момент.
 
-{% highlight vim %}
-NeoBundle 'lyokha/vim-xkbswitch.git' "Autoswitch on <esc> with libxkb needs xkb-switch-git to run
-{% endhighlight %}
+### lyokha/vim-xkbswitch.git
 Плагин, который вкупе с определенными настройками дает более удобную работу
 с русской раскладкой в vim. Идеал не достигнут. Чтобы его получить можно
 например написать кастомный переключатель, который работает без определений
@@ -871,10 +701,7 @@ setxkbmap -option keypad:pointerkeys -layout 'us,ru' -variant altgr-intl \
 проблем и есть не просит.
 
 Также есть плагин 
-{% highlight vim %}
-NeoBundle 'kana/vim-arpeggio.git' "mappings for simultaneously pressed keys
-{% endhighlight %}
-
+### kana/vim-arpeggio.git
 Который позволяет отрабатывать одновременные нажатия клавиш. У меня это
 используется для сочетания jk, которое заменяет мне esc. Это нужно для того
 чтобы буква j не создавала задержку ожидания следующей, выглядит это очень
@@ -883,58 +710,39 @@ NeoBundle 'kana/vim-arpeggio.git' "mappings for simultaneously pressed keys
 в большинстве случаев можно воспользоваться control+c или control+]
 в зависимости от того что нужно и не тянуться к esc.
 
-{% highlight vim %}
-"is all about surroundings: parentheses, brackets, quotes, XML tags, and more
-NeoBundleLazy 'tpope/vim-surround', { 'mappings' : [ ['n', 'cs', 'ds', 'ys', 'yS'], ['x', 'S']] }
-{% endhighlight %}
+### tpope/vim-surround
 Довольно известный плагин для vim, который позволяет с помощью одной команды
 добавлять и убирать скобки. Также обладает расширяемостью под разные паттерны.
 Иногда полезно.
 
-{% highlight vim %}
-NeoBundle 'jamessan/vim-gnupg.git' "Transparent work with gpg-encrypted files
-{% endhighlight %}
+### jamessan/vim-gnupg.git
 Улучшенная поддержка gpg в vim. Нужно в некоторых специфических случаях.
 
-{% highlight vim %}
-NeoBundle 'Shougo/echodoc.vim' "prints doc in echo area
-{% endhighlight %}
+### Shougo/echodoc.vim
 Выводит всякую информацию вроде прототипов функции или чего-то ещё в область
 echo(это та, которая под статусной строкой). Кого-то это может раздражать, так
 что ставить по-желанию.
 
-{% highlight vim %}
-if executable(resolve(expand("task")))
-    NeoBundle 'blindFS/vim-taskwarrior' "add taskwarrior vim plug wrapper
-endif
-{% endhighlight %}
+### blindFS/vim-taskwarrior
 Очень классная интеграция taskwarrior в vim. Представляет собой упрощенный аналог 
 org-mode emacs. Лично мне очень по душе. Просто и полезно. Как по мне главный плюс
 это более узкая направленность, простота и то что сама утилита standalone.
 Выглядит это чудо вот так:
 ![taskwarriorgif](https://camo.githubusercontent.com/fdae507403d80262534930152a555fc66f1f4c32/687474703a2f2f7461736b6578747261732e6f72672f6174746163686d656e74732f646f776e6c6f61642f3635352f32303133313131305f3030323735332e676966)
 
-{% highlight vim %}
-NeoBundle 'kopischke/vim-fetch' "vim path/to/file.ext:12:3
-{% endhighlight %}
+### kopischke/vim-fetch
 Удобный прыжок на определенное место в файле, по тому же принципу как это
 делается из командной строки, иногда бывает нужно. Основное достоинство в том
 что работает везде.
 
-{% highlight vim %}
-NeoBundle 'FooSoft/vim-argwrap' "vim arg wrapper
-{% endhighlight %}
+### FooSoft/vim-argwrap
 Команда для "схлопывания" и "захлопывания" содержимого скобок,
 лично я использую достаточно часто.
 
-{% highlight vim %}
-if has("gui_running")
-    NeoBundle 'drmikehenry/vim-fontsize.git' "set fontsize on the fly
-    NeoBundle 'tyru/restart.vim.git' "add restart support
-    NeoBundle 'vim-scripts/utl.vim.git' "Open urls in files
-    NeoBundle 'bling/vim-airline.git' "statusline for gvim only
-endif
-{% endhighlight %}
+### drmikehenry/vim-fontsize.git
+### tyru/restart.vim.git
+### vim-scripts/utl.vim.git
+### bling/vim-airline.git
 Компания плагинов, которые относились к gvim, который я больше не использую, главным
 образом из-за отсутствия интеграции с tmux. Тем не менее расскажу что это для порядка.
 vim-fontsize позволяет динамически изменять размер шрифта. Насколько я помню там эта
@@ -942,10 +750,7 @@ vim-fontsize позволяет динамически изменять разм
 нужно, потому что это можно сделать например с помощью esc-последовательностей и
 perl скриптов для случая rxvt-unicode или дополнительных патчей в случае suckless terminal
 
-{% highlight vim %}
-NeoBundle 'ryanoasis/vim-devicons.git' "fancy icons for fonts
-{% endhighlight %}
-
+### ryanoasis/vim-devicons.git
 Удивительный плагин, который добавляет что-то вроде поддержки иконок в vim.
 Весь этот процесс целая история, которую надо рассказывать, но результат
 выглядит приятно. Должен быть инициализован последним.
