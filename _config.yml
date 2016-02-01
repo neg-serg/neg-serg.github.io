@@ -51,7 +51,7 @@ links:
 timezone:    Europe/Moscow
 future:      true
 highlighter: pygments
-markdown:    redcarpet
+markdown:    kramdown
 paginate:    1
 github: [Repository metadata]
 
