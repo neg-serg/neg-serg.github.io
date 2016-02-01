@@ -57,7 +57,6 @@ github: [Repository metadata]
 
 # Permalinks https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:        pretty
-relative_permalinks: true
 # permalink:   /:categories/:title
 
 kramdown:
