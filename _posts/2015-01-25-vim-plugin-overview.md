@@ -4,9 +4,8 @@ title: Vim - обзор плагинов
 categories: personal
 tags: 
   - vim
-  - ide
-  - ycm
-  - clang
+  - plugin
+  - overview
 comments: true
 mathjax: null
 featured: true
@@ -24,7 +23,7 @@ Vim - обзор плагинов
 * TOC
 {:toc}
 
-## YouCompleteMe
+## Автодополнение
 
 ### Valloric/YouCompleteMe
 
@@ -183,12 +182,7 @@ endif
 
 ## Powerline/Lightline/Airline
 
-{% highlight vim %}
-" python powerline autodetection
-if !(&runtimepath =~ 'site-packages/powerline/bindings/vim')
-    NeoBundle 'itchyny/lightline.vim.git' "lightline is more fancy than default
-endif
-{% endhighlight %}
+<a href="https://github.com/itchyny/lightline.vim.git">itchyny/lightline.vim.git</a>
 
 Статусная строка. Использую в neovim из-за слабой поддержки python, которой
 в настоящий момент не достаточно для использования powerline. Также можно
@@ -198,9 +192,8 @@ endif
 
 ## fzf и другой fuzzy-finding
 
-### junegunn/fzf
-
-### junegunn/fzf.vim
+<a href="https://github.com/junegunn/fzf">junegunn/fzf</a> и 
+<a href="https://github.com/junegunn/fzf.vim">junegunn/fzf.vim</a>
 
 Сладкая парочка плагинов, которая добавляет поддержку fzf в vim. Штука эта
 очень хорошая, но как по мне недостаточно фичастая. Раньше вроде как был
@@ -285,33 +278,23 @@ otommod/rainbow у меня ломает подсветку, а оригинал
 
 ![Terminal Coloring](https://raw.githubusercontent.com/chrisbra/Colorizer/master/Colorizer.gif)
 
-### vimez/vim-tmux
+### Файлы синтаксиса.
+Я использую следующие дополнительные файлы для подсветки в vim:
 
-### elzr/vim-json
-
-### cespare/vim-toml
-
-### rsmenon/vim-mathematica.git
-
-### jelera/vim-javascript-syntax.git
-
-### tpope/vim-git
-
-### ekalinin/Dockerfile.vim
-
-### jnwhiteh/vim-golang.git
-
-### farseer90718/vim-regionsyntax
-
-### JulesWang/css.vim
-
-### leafo/moonscript-vim
-
-### rodjek/vim-puppet
-
-### bbchung/clighter.git
-
-### bbchung/Clamp
+* <a href="https://github.com/vimez/vim-tmux">vim-tmux</a>
+* <a href="https://github.com/elzr/vim-json">vim-json</a>
+* <a href="https://github.com/cespare/vim-toml">vim-toml</a>
+* <a href="https://github.com/rsmenon/vim-mathematica.git">vim-mathematica</a>
+* <a href="https://github.com/jelera/vim-javascript-syntax.git">vim-javascript</a>
+* <a href="https://github.com/tpope/vim-git">vim-git</a>
+* <a href="https://github.com/ekalinin/Dockerfile.vim">Dockerfile</a>
+* <a href="https://github.com/jnwhiteh/vim-golang.git">vim-golang</a>
+* <a href="https://github.com/farseer90718/vim-regionsyntax">vim-regionsyntax</a>
+* <a href="https://github.com/JulesWang/css.vim">css</a>
+* <a href="https://github.com/leafo/moonscript-vim">moonscript</a>
+* <a href="https://github.com/rodjek/vim-puppet">vim-puppet</a>
+* <a href="https://github.com/bbchung/clighter.git">clighter</a>
+* <a href="https://github.com/bbchung/Clamp">Clamp</a>
 
 Компания плагинов для синтаксиса разных типов файлов. В общем-то рассказать
 особо нечего, кроме последнего. Эти два плагина используют clang для
@@ -340,14 +323,11 @@ otommod/rainbow у меня ломает подсветку, а оригинал
 посмотреть на workflow этого плагина можно обратиться к 
 <a href="https://www.youtube.com/watch?v=fwqhBSxhGU0&hd=1">следующему  видео</a>
 
-## mopp/autodirmake.vim.git
+### thinca/vim-qfreplace.git
 
-Небольшой плагин для автосоздания директорий. Удобно.
+Довольно необычный способ взаимодействия с Quickfix. для того чтобы понять что
+это можно посмотреть вот это видео: https://vimeo.com/24700977
 
-## Shougo/vimshell.vim
-
-Shell внутри vim. Честно говоря особо и не нужно. В neovim и так встроено. Пожалуй от его
-использования я откажусь в будущем.
 
 ## Поиск
 
@@ -363,8 +343,12 @@ Shell внутри vim. Честно говоря особо и не нужно.
 использовать для поиска по большим базам кода, но это скорее актуально для
 Google Inc у которой счет количества строк кода идет на миллиарды.
 
-### mileszs/ack.vim
-### rking/ag.vim.git
+### Ag и Ack
+
+Для интеграции ack и ag можно поспользоваться вот этой парой:
+
+* <a href="https://github.com/mileszs/ack.vim">mileszs/ack.vim</a>
+* <a href="https://github.com/rking/ag.vim.git">rking/ag.vim.git</a>
 
 Интеграция поисковиков ag и ack. Это такие аналоги grep. Честно говоря если
 unite работает без них, то не нужно, надо проверить. Для тех кто не слышал
@@ -417,11 +401,6 @@ ack отличается более приятным выводом в stdout и
 для операторов. По крайней мере я люблю использовать полноценные лямбды
 вместо *\* в haskell.
 
-### thinca/vim-qfreplace.git
-
-Довольно необычный способ взаимодействия с Quickfix. для того чтобы понять что
-это можно посмотреть вот это видео: https://vimeo.com/24700977
-
 ### c9s/vimomni.vim
 omni-completion для vim. Иногда работает, иногда не очень. Не нужно если использовать
 neocomplete например.
@@ -467,8 +446,8 @@ neocomplete например.
 
 Альтернативы:
 
-* <a href="https://github.com/scrooloose/nerdcommenter">nerdcommenter</a>
-* <a href="https://github.com/tomtom/tcomment_vim">tcomment</a>
+* <a href="https://github.com/scrooloose/nerdcommenter">scrooloose/nerdcommenter</a>
+* <a href="https://github.com/tomtom/tcomment_vim">tomtom/tcomment</a>
 
 ### tpope/vim-endwise
 Автоматическое добавление парных слов для разных языков. Достаточно удобно, 
@@ -497,42 +476,43 @@ control+a в режиме редактирования. Используется
 недостатков: по-видимому не хватает guard'а на тот случай, если данный тип
 файлов не поддерживается, надо допилить.
 
-### vim-scripts/IndentConsistencyCop.git
+* <a href="https://github.com/vim-scripts/IndentConsistencyCop.git">vim-scripts/IndentConsistencyCop.git</a>
+* <a href="https://github.com/hynek/vim-python-pep8-indent.git">hynek/vim-python-pep8-indent.git</a>
+* <a href="https://github.com/fs111/pydoc.vim">fs111/pydoc.vim</a>
 
-### hynek/vim-python-pep8-indent.git
-
-### fs111/pydoc.vim
 Всякие мелкие плагины для поддержки python, которые не связаны с автодополнением.
+Как уже было написано в моей предыдущей статье с этим справится YouCompleteMe
 
 ### nosami/Omnisharp.git
 Автодополнение для c#, есть поддержка в youcompleteme. Требует создания или
 файла проекта.
 
-### jstemmer/gotags.git
+### Go
+Для поддержки go используется:
 
-### Blackrush/vim-gocode.git
-
-### fatih/vim-go.git
+* <a href="https://github.com/jstemmer/gotags.git">jstemmer/gotags.git</a>
+* <a href="https://github.com/Blackrush/vim-gocode.git">Blackrush/vim-gocode.git</a>
+* <a href="https://github.com/fatih/vim-go.git">fatih/vim-go.git</a>
 Теги для go и некоторая поддержка для этого языка, в частности автодополнение.
 
-### rust-lang/rust.vim
+### Rust
+Для поддерки rust я использую:
+* <a href="https://github.com/rust-lang/rust.vim">rust-lang/rust.vim</a>
+* <a href="https://github.com/jtdowney/vimux-cargo">jtdowney/vimux-cargo</a>
 
-### jtdowney/vimux-cargo
 Поддержка детекта rust, улучшенный(на момент написания поста) syntax
 highlighting для rust, а также поддержка асинхронной работы cargo с через tmux.
 Также поддерживается семантическое форматирование.
 
-### vim-perl/vim-perl
+Также используются плагины для простой поддержки языков perl, dot(graphviz),
+supercollider, erlang и lua. Из последнего поддержка lua получше, но конечно не
+такая хорошая как хотелось бы:
 
-### wannesm/wmgraphviz.vim
-
-### sbl/scvim.git
-
-### xolox/vim-lua-ftplugin.git
-
-### oscarh/vimerl
-Простая поддержка для языков perl, dot(graphviz), supercollider, erlang и lua. Из
-последнего поддержка lua получше, но конечно не такая хорошая как хотелось бы.
+* <a href="https://github.com/vim-perl/vim-perl">vim-perl/vim-perl</a>
+* <a href="https://github.com/wannesm/wmgraphviz.vim">wannesm/wmgraphviz.vim</a>
+* <a href="https://github.com/sbl/scvim.git">sbl/scvim.git</a>
+* <a href="https://github.com/xolox/vim-lua-ftplugin.git">xolox/vim-lua-ftplugin.git</a>
+* <a href="https://github.com/oscarh/vimerl">oscarh/vimerl</a>
 
 ### janko-m/vim-test.git
 Универсальный плагин для тестирования на разных языках.
@@ -550,32 +530,32 @@ middleware для интеграции различных программ, tmux
 Простая поддержка rtags. До emacs'овской пока не дотягивает, но в перспективе
 должно расширить возможности рефакторинга. Несколько сложновато в настройке
 и использовании и требует перекомпиляции.
+### Haskell
 
-### ujihisa/neco-ghc
+Для Haskell я использую следующие плагины:
 
-### eagletmt/ghcmod-vim.git
+* <a href="https://github.com/ujihisa/neco-ghc">ujihisa/neco-ghc</a>
+* <a href="https://github.com/eagletmt/ghcmod-vim.git">eagletmt/ghcmod-vim</a>
+* <a href="https://github.com/bitc/vim-hdevtools">bitc/vim-hdevtools</a>
+* <a href="https://github.com/neg-serg/vim2hs">neg-serg/vim2hs</a>
 
-### bitc/vim-hdevtools
-
-### neg-serg/vim2hs
 Пачка плагинов для поддержки haskell в vim. neco-ghc используется для автодополения,
 ghcmod и hdevtools добавляют всякие удобные фичи связанные с типами и т.д., также я
 использую собственный небольшой форк vim2hs с улучшенным indent'ом, потому что стандартный,
 то есть тот который входит в vim2hs, мне не нравится.
 
-### vim-ruby/vim-ruby
+### Ruby
 
-### tpope/vim-rails.git
+Для Ruby я использую следующие плагины:
 
-### tpope/vim-rake.git
+* <a href="https://github.com/vim-ruby/vim-ruby">vim-ruby/vim-ruby</a>
+* <a href="https://github.com/tpope/vim-rails.git">tpope/vim-rails</a>
+* <a href="https://github.com/tpope/vim-rake.git">tpope/vim-rake</a>
+* <a href="https://github.com/tpope/vim-rbenv.git">tpope/vim-rbenv</a>
+* <a href="https://github.com/tpope/vim-bundler">tpope/vim-bundler</a>
+* <a href="https://github.com/vim-scripts/dbext.vim">vim-scripts/dbext</a>
+* <a href="https://github.com/skalnik/vim-vroom">skalnik/vim-vroom</a>
 
-### tpope/vim-rbenv.git
-
-### tpope/vim-bundler
-
-### vim-scripts/dbext.vim
-
-### skalnik/vim-vroom
 Набор плагинов для ruby. Для автодополнения я использую vim-ruby, некоторые
 используют vim-monster. Мне если честно не очень нравятся результаты, которые
 он выдает, так что я его не использую, но, вероятно пока что его использование
@@ -597,13 +577,14 @@ PHP, Python, Ruby, Perl, Tcl и NodeJS. Как утверждает автор �
 ### othree/html5.vim
 Плагин для поддержки html5. Толком не помню что он там делает :D
 
-### szw/vim-tags
+### Теги
+Вот что я исплользую для работы с тегами:
 
-### yuki777/gtags.vim.git
+* <a href="https://github.com/szw/vim-tags">szw/vim-tags</a>
+* <a href="https://github.com/yuki777/gtags.vim.git">yuki777/gtags.vim</a>
+* <a href="https://github.com/bbchung/gasynctags.git">bbchung/gasynctags</a>
+* <a href="https://github.com/tranngocthachs/gtags-cscope-vim-plugin.git">tranngocthachs/gtags-cscope-vim-plugin</a>
 
-### bbchung/gasynctags.git
-
-### tranngocthachs/gtags-cscope-vim-plugin.git
 Vim-tags это автогенерация тегов для ctags. Не использую, видимо добавил для
 порядка, потому что easytags люто, бешено тормозит весь вим, а для всего
 остального я всё равно использую gtags, благо он поддерживает большое
@@ -639,22 +620,18 @@ jekyll, который тоже использует markdown, но смысла
 Очень хорошая поддержка js, когда я тестировал прекрасно работало. Семантическое автодополнение.
 Возможно сейчас это не особо нужно из-за поддержки в youcompleteme, надо потестировать.
 
-
 ## Поддержка git
 
-### tpope/vim-fugitive.git
+Для интеграции git в vim я использую следующие плагины:
 
-### junegunn/vim-github-dashboard.git
+<a href="https://github.com/tpope/vim-fugitive.git">vim-fugitive</a>
+<a href="https://github.com/junegunn/vim-github-dashboard.git">vim-github-dashboard</a>
+<a href="https://github.com/jaxbot/github-issues.vim.git">github-issues</a>
+<a href="https://github.com/idanarye/vim-merginal.git">vim-merginal</a>
+<a href="https://github.com/junegunn/gv.vim">junegunn/gv</a>
+<a href="https://github.com/vim-scripts/DirDiff.vim.git">DirDiff.vim</a>
+<a href="https://github.com/airblade/vim-gitgutter.git">vim-gitgutter</a>
 
-### jaxbot/github-issues.vim.git
-
-### idanarye/vim-merginal.git
-
-### junegunn/gv.vim
-
-### vim-scripts/DirDiff.vim.git
-
-### airblade/vim-gitgutter.git
 Пачка плагинов для поддержки git в vim. Здесь самый главный это fugitive,
 также мне очень нравится смотреть последние коммиты с помощью GV. Думаю добавить
 это в интеграцию одной своей приблуды, про которую я расскажу чуть позже, чтобы
@@ -665,13 +642,13 @@ jekyll, который тоже использует markdown, но смысла
 
 ## Tmux
 
-### tpope/vim-tbone.git
+Вот что я использую для интеграции с tmux:
 
-### benmills/vimux.git
+* <a href="https://github.com/tpope/vim-tbone.git">vim-tbone</a>
+* <a href="https://github.com/benmills/vimux.git">vimux</a>
+* <a href="https://github.com/christoomey/vim-tmux-navigator">vim-tmux-navigator</a>
+* <a href="https://github.com/epeli/slimux">slimux</a>
 
-### christoomey/vim-tmux-navigator
-
-### epeli/slimux
 Различные плагины для взаимодействия с tmux. Из них выделю
 christoomey/vim-tmux-navigator который позволяет прыгать между буферами tmux
 с помощью тех же хоткеев, что и между vim. И прозрачно. Словно это одна и та же
@@ -722,18 +699,17 @@ redo. Использование простое и наглядное, не ви
 Улучшенная поддержка диграфов в vim. На любителя.
 ![Better unicode support](https://camo.githubusercontent.com/1cf1562c8ebf06decd05537b5c51d7081b307224/68747470733a2f2f63687269736272612e6769746875622e696f2f76696d2d73637265656e63617374732f756e69636f64652d73637265656e636173742e676966)
 
-### kana/vim-gf-user.git
-
-### kana/vim-gf-diff.git
-
-### mattn/gf-user-vimfn.git
-
-### mkomitee/vim-gf-python.git
+### Улучшенный gf
 Различные плагины, которые направлены на улучшение поддержки команды gf для
 навигации по всяким файлам и прочим сущностям. Для тех кто в танке эта
-команда по умолчанию позволяет прыгнуть на файл под курсором.
+команда по умолчанию позволяет прыгнуть на файл под курсором. Вот они:
 
-### drmikehenry/vim-fixkey
+* <a href="https://github.com/kana/vim-gf-user.git">kana/vim-gf-user.git</a>
+* <a href="https://github.com/kana/vim-gf-diff.git">kana/vim-gf-diff.git</a>
+* <a href="https://github.com/mattn/gf-user-vimfn.git">mattn/gf-user-vimfn.git</a>
+* <a href="https://github.com/mkomitee/vim-gf-python.git">mkomitee/vim-gf-python.git</a>
+* <a href="https://github.com/drmikehenry/vim-fixkey">drmikehenry/vim-fixkey</a>
+
 Очень полезный плагин, для добавления поддерки mod1(alt) хоткеев в консольный вим.
 В neovim это уже не нужно. Используется прежде всего для поддержки моих хоткеев,
 которые переносят часть из emacs(вроде c-a в начало строки), о которых стоит
@@ -810,13 +786,13 @@ org-mode emacs. Лично мне очень по душе. Просто и по
 Команда для "схлопывания" и "захлопывания" содержимого скобок,
 лично я использую достаточно часто.
 
-### drmikehenry/vim-fontsize.git
+Специально вместе с gvim исппользуются:
 
-### tyru/restart.vim.git
+* <a href="drmikehenry/vim-fontsize.git">drmikehenry/vim-fontsize.git</a>
+* <a href="dtyru/restart.vim.git">dtyru/restart.vim.git</a>
+* <a href="dvim-scripts/utl.vim.git">dvim-scripts/utl.vim.git</a>
+* <a href="dbling/vim-airline.git">dbling/vim-airline.git</a>
 
-### vim-scripts/utl.vim.git
-
-### bling/vim-airline.git
 Компания плагинов, которые относились к gvim, который я больше не использую, главным
 образом из-за отсутствия интеграции с tmux. Тем не менее расскажу что это для порядка.
 vim-fontsize позволяет динамически изменять размер шрифта. Насколько я помню там эта
@@ -824,7 +800,16 @@ vim-fontsize позволяет динамически изменять разм
 нужно, потому что это можно сделать например с помощью esc-последовательностей и
 perl скриптов для случая rxvt-unicode или дополнительных патчей в случае suckless terminal
 
+### mopp/autodirmake.vim.git
+
+Небольшой плагин для автосоздания директорий. Удобно.
+
+### Shougo/vimshell.vim
+
+Shell внутри vim. Честно говоря особо и не нужно. В neovim и так встроено. Пожалуй от его
+использования я откажусь в будущем.
+
 ### ryanoasis/vim-devicons.git
 Удивительный плагин, который добавляет что-то вроде поддержки иконок в vim.
 Весь этот процесс целая история, которую надо рассказывать, но результат
-выглядит приятно. Должен быть инициализован последним.
+выглядит приятно. Должен быть загружен последним.
