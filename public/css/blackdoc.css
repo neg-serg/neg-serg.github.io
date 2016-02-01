@@ -88,7 +88,7 @@ code {
 }
 
 pre {
-  background-color: #222;
+  background-color: #2b2836;
 }
 
 pre { white-space: pre; overflow: auto !important; }
@@ -115,7 +115,7 @@ th {
 
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
-  background-color: #222;
+  background-color: #2b2836;
 }
 
 /* Pagination items can be `span`s or `a`s */
