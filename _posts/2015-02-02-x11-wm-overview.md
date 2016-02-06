@@ -13,9 +13,6 @@ published: true
 Обзор оконных менеджеров
 ===================
 
-* TOC
-{:toc}
-
 Я пишу эту статью как вводную, перед тем как я расскажу вам о своём форке Notion.
 Если вам это не нужно, то можете полистать красивые картинки и сразу пройти __сюда__.
 
@@ -67,6 +64,10 @@ published: true
 href="http://dotshare.it/">dotshare</a> и <a
 href="https://bbs.archlinux.org/viewforum.php?id=47">форум арча</a> или на  <a
 href="https://www.reddit.com/r/unixporn/">UnixPorn</a>
+
+* TOC
+{:toc}
+
 
 # Стековые оконные менеджеры
 
