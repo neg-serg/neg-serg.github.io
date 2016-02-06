@@ -10,8 +10,9 @@ dropcap:          true # dropcap theme
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
 url:              https://github.com/karloespiritu/blackdoc
 baseurl:          /
-#url:        	  http://hmfaysal.github.io
-version:          1.0.0
+url:        	  http://neg-serg.github.io
+version:          0.0.1
+gems:             [jekyll-paginate]
 
 # Owner/author information
 owner:
@@ -50,7 +51,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/Moscow
 future:      true
-highlighter: pygments
+highlighter: rouge
 markdown:    kramdown
 paginate:    1
 github: [Repository metadata]
@@ -64,7 +65,7 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  enable_coderay: false
 
   coderay:
     coderay_line_numbers: 
