@@ -238,9 +238,6 @@ hacking thread".
 ![dwm1](http://dotshare.it/public/images/uploads/1006.png)
 (скриншот пользователя Weidinger взятый с dotshare.it)
 
-За дополнительной информацией рекомендую обратиться на страницу <a
-href="https://github.com/Elv13">Elv13</a>
-
 ## <a href="http://awesome.naquadah.org/">Awesome</a>
 
 Очень известный динамический тайловый менеджер "следующего поколения", который
@@ -262,6 +259,9 @@ href="https://github.com/Elv13">Elv13</a>
 
 ![awesome1_scr](https://camo.githubusercontent.com/1e16c285d9ce13da9530de93033207f2bc600226/687474703a2f2f646f7473686172652e69742f7075626c69632f696d616765732f75706c6f6164732f3635312e706e67)
 (Скриншот <a href="https://github.com/copycat-killer">copycat-killer'а</a>)
+
+За дополнительной информацией рекомендую обратиться на страницу <a
+href="https://github.com/Elv13">Elv13</a>
 
 ## <a href="http://wmii.suckless.org/">wmii</a>
 
