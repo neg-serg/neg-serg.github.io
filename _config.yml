@@ -12,7 +12,7 @@ url:              https://github.com/karloespiritu/blackdoc
 baseurl:          /
 url:        	  http://neg-serg.github.io
 version:          0.0.1
-gems:             [jekyll-paginate]
+gems:             [jekyll-paginate, jekyll-gist]
 
 # Owner/author information
 owner:
@@ -53,7 +53,8 @@ timezone:    Europe/Moscow
 future:      true
 highlighter: rouge
 markdown:    kramdown
-paginate:    1
+excerpt_separator: "<!--excerpt-->"
+paginate: 10
 github: [Repository metadata]
 
 # Permalinks https://github.com/mojombo/jekyll/wiki/Permalinks
