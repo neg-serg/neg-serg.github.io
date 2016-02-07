@@ -59,7 +59,6 @@ neobundle#tap('YouCompleteMe') ... endif*. Это сделано для того
 "тяжелые".
 
 Вот что у меня сделано для ycm:
-
 {% highlight vim %}
 if neobundle#tap('YouCompleteMe')
     " Do not display "Pattern not found" messages during YouCompleteMe completion.
