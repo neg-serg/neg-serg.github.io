@@ -338,6 +338,10 @@ wmutils вы в полном объеме к нему не прикрутите.
 де-факто GHC. Достаточно тяжел, весит около 800 MiB, что может стать
 препятствием для минималистов, жадин или обладателей маленького ssd.
 
+Выглядеть может красиво, например вот так:
+![xmonad](https://wiki.haskell.org/wikiupload/6/63/And1_xmonad.png)
+(скриншот, сделанный <a href="https://wiki.haskell.org/File:And1_xmonad.png">And1</a>)
+
 # Тайловые оконные менеджеры
 
 ##  <a href="https://github.com/baskerville/bspwm">Bspwm</a>
