@@ -179,13 +179,86 @@ abbr[title] {
     border-bottom: 1px dotted #e5e5e5;
 }
 
-blockquote { color: #666; border-left: .25rem solid #333; }
+
+/* Quotes */
+blockquote {
+    padding: .5rem 1rem;
+    margin: .8rem 0;
+    color: #666; 
+    border-left: .25rem solid #333;
+}
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+@media (min-width: 30em) {
+    blockquote {
+        padding-right: 5rem;
+        padding-left: 1.25rem;
+    }
+}
+
+/* Tables */
+table {
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-collapse: collapse;
+}
+
 td, th { padding: .25rem .5rem; border: 1px solid #333; }
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th { background-color: #2b2836; }
 
+/*
+ * Pagination
+ *
+ * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
+ * there are no more previous or next posts to show.
+ */
+
+.pagination {
+    overflow: hidden; /* clearfix */
+    margin-left: -1rem;
+    margin-right: -1rem;
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+    color: #ccc;
+    text-align: center;
+}
+
 /* Pagination items can be `span`s or `a`s */
-.pagination-item { border: 1px solid #444; }
+.pagination-item {
+    display: block;
+    padding: 1rem;
+    border: 1px solid #444;
+}
+.pagination-item:first-child {
+    margin-bottom: -1px;
+}
+
+/* Only provide a hover state for linked pagination items */
+a.pagination-item:hover {
+    background-color: #f5f5f5;
+}
+
+@media (min-width: 30em) {
+    .pagination {
+        margin: 3rem 0;
+    }
+    .pagination-item {
+        float: left;
+        width: 50%;
+    }
+    .pagination-item:first-child {
+        margin-bottom: 0;
+        border-top-left-radius:    4px;
+        border-bottom-left-radius: 4px;
+    }
+    .pagination-item:last-child {
+        margin-left: -1px;
+        border-top-right-radius:    4px;
+        border-bottom-right-radius: 4px;
+    }
+}
 
 @media (min-width: 38em) { html { font-size: 16px; } }
 @media (min-width: 48em) { html { font-size: 16px; } }
@@ -354,7 +427,6 @@ a.sidebar-nav-item:focus { text-decoration: underline; }
 ::-webkit-scrollbar-thumb { background:#222; border: thin solid #222; border-radius:10px; }
 ::-webkit-scrollbar-thumb:hover { background:#7d7d7d; }
 
-
 img {
     display: block;
     max-width: 100%;
@@ -364,91 +436,4 @@ img {
     padding: 0.75rem;
     border: 1px solid;
     margin-top: .5rem;
-}
-
-/*--------------------------------------------------------------------------*/
-/* Quotes */
-blockquote {
-    padding: .5rem 1rem;
-    margin: .8rem 0;
-    color: #7a7a7a;
-    border-left: .25rem solid #e5e5e5;
-}
-blockquote p:last-child {
-    margin-bottom: 0;
-}
-@media (min-width: 30em) {
-    blockquote {
-        padding-right: 5rem;
-        padding-left: 1.25rem;
-    }
-}
-
-/* Tables */
-table {
-    margin-bottom: 1rem;
-    width: 100%;
-    border: 1px solid #e5e5e5;
-    border-collapse: collapse;
-}
-td,
-th {
-    padding: .25rem .5rem;
-    border: 1px solid #e5e5e5;
-}
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-    background-color: #f9f9f9;
-}
-
-
-/*
- * Pagination
- *
- * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
- * there are no more previous or next posts to show.
- */
-
-.pagination {
-    overflow: hidden; /* clearfix */
-    margin-left: -1rem;
-    margin-right: -1rem;
-    font-family: "PT Sans", Helvetica, Arial, sans-serif;
-    color: #ccc;
-    text-align: center;
-}
-
-/* Pagination items can be `span`s or `a`s */
-.pagination-item {
-    display: block;
-    padding: 1rem;
-    border: 1px solid #eee;
-}
-.pagination-item:first-child {
-    margin-bottom: -1px;
-}
-
-/* Only provide a hover state for linked pagination items */
-a.pagination-item:hover {
-    background-color: #f5f5f5;
-}
-
-@media (min-width: 30em) {
-    .pagination {
-        margin: 3rem 0;
-    }
-    .pagination-item {
-        float: left;
-        width: 50%;
-    }
-    .pagination-item:first-child {
-        margin-bottom: 0;
-        border-top-left-radius:    4px;
-        border-bottom-left-radius: 4px;
-    }
-    .pagination-item:last-child {
-        margin-left: -1px;
-        border-top-right-radius:    4px;
-        border-bottom-right-radius: 4px;
-    }
 }
