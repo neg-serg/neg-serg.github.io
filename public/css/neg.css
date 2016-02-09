@@ -268,7 +268,11 @@ a.pagination-item:hover {
     padding: 2rem 1rem;
     color: rgba(255,255,255,.5);
     background-color: #111111;
-    /*background-image: url(images/bg.jpg); !important*/
+    background-image: url('/images/sidebar_bg.jpg'); !important
+    background-origin: padding-box !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center top !important;
     overflow: auto;
 }
 
