@@ -105,8 +105,7 @@ strong, b { color: #848471; }
 code, pre {
     color: white;
     background-color: #101010;
-    font-family: "PragmataPro2", sans-serif; !important
-    font-size: 8pt; !important
+    font-size: 10pt;
     white-space: pre;
     border-color: black;
     border-width: 2px;
@@ -116,15 +115,6 @@ code, pre {
     overflow-y: auto !important;
     max-height: 1024px;
 }
-
-.highlight {
-    margin-bottom: 1rem;
-    border-radius: 4px;
-}
-.highlight pre {
-    margin-bottom: 0;
-}
-
 
 hr { 
     display: block;
@@ -373,11 +363,9 @@ a.sidebar-nav-item:focus { text-decoration: underline; }
     .layout-reverse .content { margin-left: 4rem; margin-right: 22rem; }
 }
 
-.theme-base-0b .sidebar { background-color: #00000; }
-.theme-base-0b .content a, .theme-base-0b .related-posts li a:hover { color: #6a8c8c; }
-.theme-base-0d .sidebar { background-color: #6a8c8c; }
-.theme-base-0d .content a,
-.theme-base-0d .related-posts li a:hover { color: #6a8c8c; }
+.sidebar { background-color: #00000; }
+.content a, .theme-base-0b .related-posts li a:hover { color: #6a8c8c; }
+.content a, .related-posts li a:hover { color: #6a8c8c; }
 
 /*
  * Masthead
