@@ -11,7 +11,7 @@ dropcap:          true # dropcap theme
 url:              https://github.com/karloespiritu/blackdoc
 baseurl:          /
 url:        	  http://neg-serg.github.io
-version:          0.0.1
+version:          0.1
 gems:             [jekyll-paginate, jekyll-gist]
 
 # Owner/author information
