@@ -10,88 +10,71 @@ ______ _            _   ______
  */
 
 html { font-family: "Meslo", Helvetica, Arial, sans-serif; }
-body { color: #848482; background-color: #000000; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'PragmataPro for Powerline', sans-serif;
-  color: #aaa;
+body { 
+    color: #848482; 
+    background-color: #000000; 
+    background: linear-gradient(rgba(0, 0, 0, 0.82), 
+                                rgba(0, 0, 0, 0.82) 
+                               ), url('/images/bg.jpg');
+    background-clip: border-box !important;
+    background-origin: padding-box !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center top !important;
 }
 
+h1, h2, h3, h4, h5, h6 { font-family: 'PragmataPro for Powerline', sans-serif; color: #aaa; }
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  font-family: 'PragmataPro for Powerline', sans-serif;
-  color: #50585D;
-  font-kerning: auto;
-  font-feature-settings: "kern","liga","dlig","hlig","cswh";
-  font-synthesis: weight style;
+    font-family: 'PragmataPro for Powerline', sans-serif;
+    color: #50585D;
+    font-kerning: auto;
+    font-feature-settings: "kern","liga","dlig","hlig","cswh";
+    font-synthesis: weight style;
 }
 
 a { color: #ffeb99; transition: color ease 0.3s; }
 a:hover { color: #6a8c8c; }
 
 .btn {
-  display: inline-block;
-  padding: .25rem 1rem;
-  font-family: "PT Sans", sans-serif;
-  color: #ebcb8b;
-  border: .1rem solid #32343c;
-  border-radius: .1rem;
+    display: inline-block;
+    padding: .25rem 1rem;
+    font-family: "PT Sans", sans-serif;
+    color: #ebcb8b;
+    border: .1rem solid #32343c;
+    border-radius: .1rem;
 }
 
-.btn:hover,
-.btn:focus {
-  color: #26282d;
-  background-color: #ebcb8b;
-  border-color: #ebcb8b;
-}
-
+.btn:hover, .btn:focus { color: #26282d; background-color: #ebcb8b; border-color: #ebcb8b; }
 strong, b { color: #848471; }
 
-code {
-  color: #bbbbbb;
-  white-space: pre-wrap;
-  background-color: #2b2836;
+code, pre {
+    color: white;
+    background-color: #101010;
+    font-family: "PragmataPro for Powerline", sans-serif; !important
+    font-size: 8pt; !important
+    white-space: pre;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    overflow: auto !important;
+    overflow-y: auto !important;
+    max-height: 1024px;
 }
 
-pre {
-  background-color: #2b2836;
-  white-space: pre;
-  max-height: 800px;
-}
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: rgba(235, 242, 246, 0.29) 1px solid;
-  margin: 1.2em 0;
-  padding: 0;
-}
-
-blockquote {
-  color: #666;
-  border-left: .25rem solid #333;
-}
-
-td, th {
-  padding: .25rem .5rem;
-  border: 1px solid #333;
-}
-
+hr { display: block; height: 1px; border: 0; border-top: rgba(235, 242, 246, 0.29) 1px solid; margin: 1.2em 0; padding: 0; }
+blockquote { color: #666; border-left: .25rem solid #333; }
+td, th { padding: .25rem .5rem; border: 1px solid #333; }
 tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-  background-color: #2b2836;
-}
+tbody tr:nth-child(odd) th { background-color: #2b2836; }
 
 /* Pagination items can be `span`s or `a`s */
 .pagination-item { border: 1px solid #444; }
 
-@media (min-width: 48em) {
-  html { font-size: 16px; }
-}
-@media (min-width: 58em) {
-  html { font-size: 20px; }
-}
-
+@media (min-width: 48em) { html { font-size: 16px; } }
+@media (min-width: 58em) { html { font-size: 20px; } } 
 .message { color: #3D8D8D; background-color: #0a0f0f; }
 .gist-data { background-color: #222 !important; border-bottom: 1px solid #333 !important; }
 .gist .markdown-body { color: #999 !important; }
@@ -100,21 +83,16 @@ tbody tr:nth-child(odd) th {
 .gist-meta { background-color: #222 !important; }
 
 .sidebar {
-  text-align: center;
-  padding: 2rem 1rem;
-  color: rgba(255,255,255,.5);
-  background-color: #000;
-  overflow: auto;
+    text-align: center;
+    padding: 2rem 1rem;
+    color: rgba(255,255,255,.5);
+    background-color: #111111;
+    /*background-image: url(images/bg.jpg); !important*/
+    overflow: auto;
 }
+
 @media (min-width: 48em) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 18rem;
-    text-align: left;
-  }
+  .sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 18rem; text-align: left; }
 }
 
 .sidebar a { color: #6a8c8c; }
