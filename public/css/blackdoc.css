@@ -13,9 +13,7 @@ html { font-family: "Meslo", Helvetica, Arial, sans-serif; }
 body { 
     color: #848482; 
     background-color: #000000; 
-    background: linear-gradient(rgba(0, 0, 0, 0.82), 
-                                rgba(0, 0, 0, 0.82) 
-                               ), url('/images/bg.jpg');
+    background: url('/images/bg.jpg');
     background-clip: border-box !important;
     background-origin: padding-box !important;
     background-attachment: fixed !important;
