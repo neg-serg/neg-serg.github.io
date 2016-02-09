@@ -1,17 +1,39 @@
 /*
-______ _            _   ______
-| ___ \ |          | |  |  _  \
-| |_/ / | __ _  ___| | _| | | |___   ___
-| ___ \ |/ _` |/ __| |/ / | | / _ \ / __|
-| |_/ / | (_| | (__|   <| |/ / (_) | (__
-\____/|_|\__,_|\___|_|\_\___/ \___/ \___|
-
- * Designed, built, and released under MIT license by @karloespiritu.
+ * Neg style
+ *
+ *
+ *    ┏┓╻┏━╸┏━╸   ┏━╸┏━┓┏━┓   ┏━┓╺┳╸╻ ╻╻  ┏━╸
+ *    ┃┗┫┣╸ ┃╺┓   ┃  ┗━┓┗━┓   ┗━┓ ┃ ┗┳┛┃  ┣╸
+ *    ╹ ╹┗━╸┗━┛   ┗━╸┗━┛┗━┛   ┗━┛ ╹  ╹ ┗━╸┗━╸
+ *
+ *
+ * thx to : [https://github.com/poole/poole, https://github.com/karloespiritu/BlackDoc]
  */
 
-html { font-family: "Meslo", Helvetica, Arial, sans-serif; }
+
+@font-face {
+    font-family: 'PragmataPro2';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/pragmata.ttf');
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body { margin: 0; padding: 0; }
+
+html {
+    font-family: "PragmataPro2", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
 body { 
-    color: #848482; 
+    color: #a0aaaa; 
     background-color: #000000; 
     background: url('/images/bg.jpg');
     background-clip: border-box !important;
@@ -20,20 +42,53 @@ body {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center top !important;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 { font-family: 'PragmataPro for Powerline', sans-serif; color: #aaa; }
+h1, h2, h3, h4, h5, h6 { 
+    margin-bottom: .5rem;
+    font-weight: bold;
+    line-height: 1.25;
+    text-rendering: optimizeLegibility;
+    font-family: 'PragmataPro2', sans-serif; color: #aaa; 
+}
+
+h1 { font-size: 2rem; }
+h2 { margin-top: 1rem; font-size: 1.5rem; }
+h3 { margin-top: 1.5rem; font-size: 1.25rem; }
+h4, h5, h6 { margin-top: 1rem; font-size: 1rem; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    font-family: 'PragmataPro for Powerline', sans-serif;
-    color: #50585D;
+    font-family: 'PragmataPro2', sans-serif;
+    color: #aaa;
+    text-decoration: none;
     font-kerning: auto;
     font-feature-settings: "kern","liga","dlig","hlig","cswh";
     font-synthesis: weight style;
 }
 
-a { color: #ffeb99; transition: color ease 0.3s; }
-a:hover { color: #6a8c8c; }
+p { margin-top: 0; margin-bottom: 1rem; }
+
+ul, ol, dl { margin-top: 0; margin-bottom: 1rem; }
+dt { font-weight: bold; }
+dd { margin-bottom: .5rem; }
+
+a { 
+    color: #ffeb99; 
+    transition: color ease 0.3s; 
+    text-decoration: underline;
+}
+
+/* No `:visited` state is required by default (browsers will use `a`) */
+a strong { color: inherit; }
+
+a:hover,
+a:focus {
+    text-decoration: none; important!
+    color: #6a8c8c;
+    filter: invert(100%);
+}
 
 .btn {
     display: inline-block;
@@ -50,7 +105,7 @@ strong, b { color: #848471; }
 code, pre {
     color: white;
     background-color: #101010;
-    font-family: "PragmataPro for Powerline", sans-serif; !important
+    font-family: "PragmataPro2", sans-serif; !important
     font-size: 8pt; !important
     white-space: pre;
     border-color: black;
@@ -62,7 +117,68 @@ code, pre {
     max-height: 1024px;
 }
 
-hr { display: block; height: 1px; border: 0; border-top: rgba(235, 242, 246, 0.29) 1px solid; margin: 1.2em 0; padding: 0; }
+.highlight {
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+.highlight pre {
+    margin-bottom: 0;
+}
+
+
+/*
+code {
+padding: .25em .5em;
+font-size: 85%;
+color: #bf616a;
+background-color: #f9f9f9;
+border-radius: 3px;
+}
+pre {
+display: block;
+margin-top: 0;
+margin-bottom: 1rem;
+padding: 1rem;
+font-size: .8rem;
+line-height: 1.4;
+white-space: pre;
+white-space: pre-wrap;
+word-break: break-all;
+word-wrap: break-word;
+background-color: #f9f9f9;
+}
+pre code {
+padding: 0;
+font-size: 100%;
+color: inherit;
+background-color: transparent;
+overflow: auto;
+}
+ */
+
+hr { 
+    display: block;
+    height: 1px; 
+    border: 0; 
+    border-top: rgba(235, 242, 246, 0.29) 1px solid; 
+    margin: 1.2em 0; 
+    padding: 0;
+    position: relative;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #fff;
+}
+
+abbr {
+    font-size: 85%;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+}
+abbr[title] {
+    cursor: help;
+    border-bottom: 1px dotted #e5e5e5;
+}
+
 blockquote { color: #666; border-left: .25rem solid #333; }
 td, th { padding: .25rem .5rem; border: 1px solid #333; }
 tbody tr:nth-child(odd) td,
@@ -71,13 +187,40 @@ tbody tr:nth-child(odd) th { background-color: #2b2836; }
 /* Pagination items can be `span`s or `a`s */
 .pagination-item { border: 1px solid #444; }
 
+@media (min-width: 38em) { html { font-size: 16px; } }
 @media (min-width: 48em) { html { font-size: 16px; } }
 @media (min-width: 58em) { html { font-size: 20px; } } 
-.message { color: #3D8D8D; background-color: #0a0f0f; }
+
+.message { 
+    margin-bottom: 1rem;
+    padding: 1rem;
+    color: #3D8D8D; 
+    background-color: #0a0f0f; 
+}
+
+
+/*
+ * Container
+ *
+ * Center the page content.
+ */
+.container {
+    max-width: 38rem;
+    padding-left:  1rem;
+    padding-right: 1rem;
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+.gist code { padding: 0; color: inherit; background-color: transparent; border-radius: 0; }
+.gist .gist-file .gist-data { font-size: .8rem !important; line-height: 1.4; }
+.gist .gist-file { font-family: Menlo, Monaco, "Courier New", monospace !important; }
+
+.gist pre { padding: 0; background-color: transparent; }
 .gist-data { background-color: #222 !important; border-bottom: 1px solid #333 !important; }
-.gist .markdown-body { color: #999 !important; }
+.gist .markdown-body { color: #999 !important; padding: 15px; }
 .gist .markdown-body pre { background-color: #111 !important; }
-.gist-file { border: 1px solid #333 !important;; }
+.gist-file { border: 1px solid #333 !important; }
 .gist-meta { background-color: #222 !important; }
 
 .sidebar {
@@ -90,17 +233,17 @@ tbody tr:nth-child(odd) th { background-color: #2b2836; }
 }
 
 @media (min-width: 48em) {
-  .sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 18rem; text-align: left; }
+    .sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 18rem; text-align: left; }
 }
 
-.sidebar a { color: #6a8c8c; }
+.sidebar a { color: #6a8c8c; text-decoration: none; }
 
 /* About section */
 .sidebar-about h1 {
-  color: #6a8c8c;
-  margin-top: 0;
-  font-family: 'PragmataPro', serif;
-  font-size: 2.25rem;
+    color: #6a8c8c;
+    margin-top: 0;
+    font-family: 'PragmataPro2', serif;
+    font-size: 2.25rem;
 }
 
 .sidebar-nav { margin-bottom: 1rem; }
@@ -110,31 +253,83 @@ a.sidebar-nav-item:focus { text-decoration: underline; }
 .sidebar-nav-item.active { font-weight: bold; }
 
 @media (min-width: 48em) {
-  .sidebar-sticky {
-    /*position: absolute;*/ /* to draw bottom */
-    right:  1rem;
-    bottom: 1rem;
-    left:   1rem;
-  }
+    .sidebar-sticky {
+        /*position: absolute;*/ /* to draw bottom */
+        right:  1rem;
+        bottom: 1rem;
+        left:   1rem;
+    }
 }
 
 .content { padding-top: 4rem; padding-bottom: 4rem; }
 @media (min-width: 48em) {
-  .content { max-width: 38rem; margin-left: 20rem; margin-right: 2rem; }
+    .content { max-width: 38rem; margin-left: 20rem; margin-right: 2rem; }
 }
 @media (min-width: 64em) {
-  .content { margin-left: 22rem; margin-right: 4rem; }
+    .content { margin-left: 22rem; margin-right: 4rem; }
 }
 
+/*
+ * Posts and pages
+ * --------------
+ * Each post is wrapped in `.post` and is used on default and post layouts. Each
+ * page is wrapped in `.page` and is only used on the page layout.
+ */
+.page, .post { margin-bottom: 4em; }
 .page-title, .post-title, .post-title a { color: #6a8c8c; }
+.page-title, .post-title { margin-top: 0; }
+/* Meta data line below post title */
+.post-date {
+    display: block;
+    margin-top: -.5rem;
+    margin-bottom: 1rem;
+    color: #9a9a9a;
+}
+
+/*
+ * Custom type
+ * Extend paragraphs with `.lead` for larger introductory text.
+ */
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+
+/* Related posts */
+.related {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid #eee;
+}
+.related-posts {
+    padding-left: 0;
+    list-style: none;
+}
+.related-posts h3 {
+    margin-top: 0;
+}
+.related-posts li small {
+    font-size: 75%;
+    color: #999;
+}
+.related-posts li a:hover {
+    color: #268bd2;
+    text-decoration: none;
+}
+.related-posts li a:hover small {
+    color: inherit;
+}
+
+
 
 @media (min-width: 48em) {
-  .layout-reverse .sidebar { left: auto; right: 0; }
-  .layout-reverse .content { margin-left: 2rem; margin-right: 20rem; }
+    .layout-reverse .sidebar { left: auto; right: 0; }
+    .layout-reverse .content { margin-left: 2rem; margin-right: 20rem; }
 }
 
 @media (min-width: 64em) {
-  .layout-reverse .content { margin-left: 4rem; margin-right: 22rem; }
+    .layout-reverse .content { margin-left: 4rem; margin-right: 22rem; }
 }
 
 .theme-base-0b .sidebar { background-color: #00000; }
@@ -143,8 +338,117 @@ a.sidebar-nav-item:focus { text-decoration: underline; }
 .theme-base-0d .content a,
 .theme-base-0d .related-posts li a:hover { color: #6a8c8c; }
 
+/*
+ * Masthead
+ * Super small header above the content for site name and short description.
+ */
+
+.masthead { padding-top:    1rem; padding-bottom: 1rem; margin-bottom: 3rem; }
+.masthead-title { margin-top: 0; margin-bottom: 0; color: #505050; }
+.masthead-title a { color: #505050; }
+.masthead-title small { font-size: 75%; font-weight: 400; color: #c0c0c0; letter-spacing: 0; }
+
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-button { width: 8px; height:5px; }
 ::-webkit-scrollbar-track { background: #333; border: thin solid #111; /*box-shadow: 0px 0px 3px #111 inset;*/ border-radius:10px; }
 ::-webkit-scrollbar-thumb { background:#222; border: thin solid #222; border-radius:10px; }
 ::-webkit-scrollbar-thumb:hover { background:#7d7d7d; }
+
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 0 1rem;
+    border-radius: 5px;
+
+    padding: 0.75rem;
+    border: 1px solid;
+    margin-top: .5rem;
+}
+
+/*--------------------------------------------------------------------------*/
+/* Quotes */
+blockquote {
+    padding: .5rem 1rem;
+    margin: .8rem 0;
+    color: #7a7a7a;
+    border-left: .25rem solid #e5e5e5;
+}
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+@media (min-width: 30em) {
+    blockquote {
+        padding-right: 5rem;
+        padding-left: 1.25rem;
+    }
+}
+
+/* Tables */
+table {
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-collapse: collapse;
+}
+td,
+th {
+    padding: .25rem .5rem;
+    border: 1px solid #e5e5e5;
+}
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+    background-color: #f9f9f9;
+}
+
+
+/*
+ * Pagination
+ *
+ * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
+ * there are no more previous or next posts to show.
+ */
+
+.pagination {
+    overflow: hidden; /* clearfix */
+    margin-left: -1rem;
+    margin-right: -1rem;
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+    color: #ccc;
+    text-align: center;
+}
+
+/* Pagination items can be `span`s or `a`s */
+.pagination-item {
+    display: block;
+    padding: 1rem;
+    border: 1px solid #eee;
+}
+.pagination-item:first-child {
+    margin-bottom: -1px;
+}
+
+/* Only provide a hover state for linked pagination items */
+a.pagination-item:hover {
+    background-color: #f5f5f5;
+}
+
+@media (min-width: 30em) {
+    .pagination {
+        margin: 3rem 0;
+    }
+    .pagination-item {
+        float: left;
+        width: 50%;
+    }
+    .pagination-item:first-child {
+        margin-bottom: 0;
+        border-top-left-radius:    4px;
+        border-bottom-left-radius: 4px;
+    }
+    .pagination-item:last-child {
+        margin-left: -1px;
+        border-top-right-radius:    4px;
+        border-bottom-right-radius: 4px;
+    }
+}
