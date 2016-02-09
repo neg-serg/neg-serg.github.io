@@ -58,7 +58,7 @@ paginate: 10
 github: [Repository metadata]
 
 # Permalinks https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:        pretty
+permalink:     pretty
 # permalink:   /:categories/:title
 
 kramdown:
