@@ -266,7 +266,6 @@ a.pagination-item:hover {
 .sidebar {
     text-align: center;
     padding: 2rem 1rem;
-    color: rgba(255,255,255,.5);
     background-color: #111111;
     background-image: url('/images/sidebar_bg.jpg'); !important
     background-origin: padding-box !important;
