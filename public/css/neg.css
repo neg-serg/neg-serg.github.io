@@ -11,31 +11,14 @@
  */
 
 
-@font-face {
-    font-family: 'PragmataPro2';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/pragmata.ttf');
-}
+@font-face { font-family: 'PragmataPro2'; font-style: normal; font-weight: 400; src: url('/fonts/pragmata.ttf'); }
+@font-face { font-family: 'PragmataPro2bold'; font-style: bold; src: url('/fonts/pragmata_bold.ttf'); }
 
-@font-face {
-    font-family: 'PragmataPro2bold';
-    font-style: bold;
-    src: url('/fonts/pragmata_bold.ttf');
-}
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 html, body { margin: 0; padding: 0; }
 
-html {
-    font-family: "PragmataPro2", Helvetica, Arial, sans-serif;
-    line-height: 1.35;
-}
+html { font-family: "PragmataPro2", Helvetica, Arial, sans-serif; line-height: 1.35; }
 
 body { 
     color: #a0aaaa; 
@@ -61,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'PragmataPro2', sans-serif; color: #aaa; 
 }
 
-h1 { font-size: 2rem; }
+h1 { font-size: 1.8rem; }
 h2 { margin-top: 1rem; font-size: 1.5rem; }
 h3 { margin-top: 1.5rem; font-size: 1.25rem; }
 h4, h5, h6 { margin-top: 1rem; font-size: 1rem; }
@@ -81,11 +64,7 @@ ul, ol, dl { margin-top: 0; margin-bottom: 1rem; }
 dt { font-weight: bold; }
 dd { margin-bottom: .5rem; }
 
-a { 
-    color: #ffeb99; 
-    transition: color ease 0.3s; 
-    text-decoration: underline;
-}
+a { color: #ffeb99; transition: color ease 0.3s; text-decoration: underline; }
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a strong { color: inherit; }
@@ -114,10 +93,7 @@ code, pre {
     background-color: #101010;
     font-size: 12pt;
     font-family: "PragmataPro2";
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 5px;
+    border-color: transparent;
     overflow: auto;
     word-wrap: normal;
     white-space: pre-wrap;
@@ -143,13 +119,6 @@ table { margin-bottom: 1rem; width: 100%; border: 1px solid #e5e5e5; border-coll
 td, th { padding: .25rem .5rem; border: 1px solid #333; }
 /* tbody tr:nth-child(odd) td, */
 /* tbody tr:nth-child(odd) th { background-color: #2b2836; } */
-
-/*
- * Pagination
- *
- * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
- * there are no more previous or next posts to show.
- */
 
 .pagination {
     overflow: hidden; /* clearfix */
@@ -193,7 +162,6 @@ a.pagination-item:hover { background-color: #f5f5f5; }
     background-color: #0a0f0f; 
 }
 
-
 .container {
     max-width: 38rem;
     padding-left:  0rem;
@@ -203,10 +171,9 @@ a.pagination-item:hover { background-color: #f5f5f5; }
 }
 
 .gist code { padding: 0; color: inherit; background-color: transparent; border-radius: 0; }
+.gist pre { padding: 0; background-color: transparent; }
 .gist .gist-file .gist-data { font-size: .8rem !important; line-height: 1.4; }
 .gist .gist-file { font-family: Menlo, Monaco, "Courier New", monospace !important; }
-
-.gist pre { padding: 0; background-color: transparent; }
 .gist-data { background-color: #222 !important; border-bottom: 1px solid #333 !important; }
 .gist .markdown-body { color: #999 !important; padding: 15px; }
 .gist .markdown-body pre { background-color: #111 !important; }
@@ -257,7 +224,7 @@ a.sidebar-nav-item:focus { text-decoration: underline; }
 @media (min-width: 48em) {
     .content { max-width: 38rem; margin-left: 20rem; margin-right: 2rem; }
 }
-@media (min-width: 64em) { .content { margin-left: 22rem; margin-right: 4rem; } }
+@media (min-width: 64em) { .content { margin-left: 21rem; margin-right: 4rem; } }
 
 /*
  * Posts and pages
