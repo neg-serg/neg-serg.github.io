@@ -12,6 +12,7 @@ comments: true
 mathjax: null
 featured: true
 published: true
+date: 2016-02-14 14:30:00 +03:00
 ---
 
 Решил добавить парочку небольших дополнений к той статье, про использование
