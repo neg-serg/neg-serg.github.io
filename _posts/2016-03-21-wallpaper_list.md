@@ -8,7 +8,7 @@ comments: true
 mathjax: null
 featured: true
 published: true
-date: 2016-03-22 18:00:00 +03:00
+date: 2016-03-21 18:00:00 +03:00
 ---
 
 После того как wallbase почил стало довольно неудобно искать обои для
