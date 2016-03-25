@@ -29,7 +29,7 @@ date: 2016-03-21 18:00:00 +03:00
 но я их к сожалению забыл, кто ещё знает что-то подобное просьба отписать
 в комменты. 
 
-Вот как это выглядит в Spacemacs:
+Вот как это выглядит в <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a>:
 ![spacemacs](http://i.imgur.com/izfnAGX.png)
 
 Так же есть попытка возродить wallbase под названием <a
