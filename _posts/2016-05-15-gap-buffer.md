@@ -37,9 +37,9 @@ href="http://history.dcs.ed.ac.uk/archive/apps/ecce/hmd/e915.imp.html">http://hi
 
 Рассмотрим пример:
 
-1) Начальное состояние. Длина gap buffer = 20.
-2) Вставляем слово cow. Gap buffer уменьшается.
-3) Вставляем ещё текста. Gap buffer заполняется и создается новый.
+1. Начальное состояние. Длина gap buffer = 20.
+2. Вставляем слово cow. Gap buffer уменьшается.
+3. Вставляем ещё текста. Gap buffer заполняется и создается новый.
 
 {% highlight text %}
 1) There is no [                    ]level.
