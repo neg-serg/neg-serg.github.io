@@ -552,7 +552,7 @@ done
 
 complist: работа с длинными меню и другие важные улушения для автокомплита,
 мастхэв. За подробностями пожалуйте, например, <a
-href=http://www.fifi.org/cgi-bin/info2www?(zsh)The+zsh/complist+Module"">сюда</a>.
+href="http://www.fifi.org/cgi-bin/info2www?(zsh)The+zsh/complist+Module">сюда</a>.
 
 deltochar: модуль, который повторяет zap-to-char из emacs. Уже устарело, для
 этого мне кажется удобнее воспользоваться vi-mode, после чего dt[символ], но
