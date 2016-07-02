@@ -505,6 +505,44 @@ function magic-abbrev-expand() {
 }
 
 function no-magic-abbrev-expand() { LBUFFER+=' ' }
+
+zle -N magic-abbrev-expand
+zle -N no-magic-abbrev-expand
+bindkey " " magic-abbrev-expand
+bindkey "^x " no-magic-abbrev-expand
+
+setopt extendedglob
+setopt interactivecomments
+declare -A abk
+abk=(
+    'A'    '|& ack -i '
+    'G'    '|& grep -i '
+    'C'    '| wc -l'
+    'H'    '| head'
+    'T'    '| tail'
+    'N'    '&>/dev/null'
+    'S'    '| sort -h '
+    'V'    '|& vim -'
+    'W'    '|& v -'
+    "jk"   "!-2$"
+    "jj"   "!-3$"
+    "kk"   "!-4$"
+)
+
+zleiab() {
+    emulate -L zsh
+    setopt extendedglob
+    local MATCH
+
+    matched_chars='[.-|_a-zA-Z0-9]#'
+    LBUFFER=${LBUFFER%%(#m)[.-|_a-zA-Z0-9]#}
+    LBUFFER+=${abk[$MATCH]:-$MATCH}
+}
+
+# do history expansion on space
+bindkey " "             magic-space
+bindkey ",."            zleiab
+
 {% endhighlight %}
 
 Функция для разворота сокращений. Вы можете нажать ,G и получить |& grep -i
@@ -641,6 +679,9 @@ function up-one-dir   { pushd .. > /dev/null; zle redisplay; zle -M $(pwd);  }
 function back-one-dir { popd     > /dev/null; zle redisplay; zle -M $(pwd);  }
 zle -N up-one-dir
 zle -N back-one-dir
+
+bindkey "^[+" up-one-dir
+bindkey "^[=" back-one-dir
 {% endhighlight %}
 
 Функции для того чтобы прыгать назад-вперед
@@ -666,29 +707,12 @@ function rationalise-dot() {
     fi
 }
 zle -N rationalise-dot
+
+bindkey . rationalise-dot
 {% endhighlight %}
 
 Функция, которая конвертирует ... в ../.. прямо на ходу с помощью ZLE.
 Удобно.
-
-{% highlight shell %}
-# jump behind the first word on the cmdline.
-# useful to add options.
-function jump_after_first_word() {
-    local words
-    words=(${(z)BUFFER})
-
-    if (( ${#words} <= 1 )) ; then
-        CURSOR=${#BUFFER}
-    else
-        CURSOR=${#${words[1]}}
-    fi
-}
-zle -N jump_after_first_word
-{% endhighlight %}
-
-ZLE-функция, которая позволяет прыгнуть после первого слова команды. В теории
-это удобно, но вообще историзм, надо бы убрать.
 
 {% highlight shell %}
 # grep for running process, like: 'any vime
@@ -743,6 +767,11 @@ function inplace_mk_dirs() {
         zle end-of-line
     fi
 }
+
+# load the lookup subsystem if it's available on the system
+zrcautoload lookupinit && lookupinit
+zle -N inplace_mk_dirs && bindkey '^xM' inplace_mk_dirs
+
 {% endhighlight %}
 
 Тоже очень частоиспользуемая функция, которая позволяет по C-x Shift-M
@@ -862,7 +891,14 @@ function fg-widget() {
     fi
 }
 zle -N fg-widget
+
+bindkey -M emacs "^Z" fg-widget
+bindkey -M vicmd "^Z" fg-widget
+bindkey -M viins "^Z" fg-widget
 {% endhighlight %}
+
+Виджет, который позволяет переключать приложение на foreground, если оно уже
+было отправлено в background по C-z.
 
 {% highlight shell %}
 #pcp - copy files matching pattern $1 to $2
@@ -876,6 +912,12 @@ if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
 fi
 source "$fasd_cache"
 unset fasd_cache
+
+bindkey "i" fasd-complete      # A-i to do ls++ alias
+bindkey '^X^A' fasd-complete     # C-x C-a to do fasd-complete (files and directories)
+bindkey '^X^F' fasd-complete-f   # C-x C-f to do fasd-complete-f (only files)
+bindkey '^X^D' fasd-complete-d   # C-x C-d to do fasd-complete-d (only directories)
+
 {% endhighlight %}
 
 Инициализация fasd, который прыгает по файлам и директориям, о котором я уже
@@ -887,6 +929,8 @@ function copy-to-clipboard() {
     echo -E -n - "$BUFFER" | xclip -i
 }
 zle -N copy-to-clipboard
+
+bindkey '^X^X' copy-to-clipboard
 {% endhighlight %}
 
 ZLE-функция для копирования в буфер обмена
@@ -1098,6 +1142,87 @@ function clojure(){
 
 Простой враппер для clojure.
 
+
+#### Open
+
+{% highlight shell %}
+#! /bin/zsh
+function open(){
+    local editor="v"
+    local web_browser="firefox"
+    local vid_pl="mpv"
+    local audio_player="mpv"
+    local doc_reader="zathura"
+    local image_viewer="~/bin/scripts/sxiv_browser.sh"
+
+    if [[ -d $1 ]]; then
+        urxvt --chdir "$1"
+    elif [[ -e $1 ]]; then
+        mime_type=$(file -L -b --mime-type "$1")
+        # the order is important, e.g. foo/bar must appear before foo/*
+        case ${mime_type} in
+            video/*|application/vnd.rn-realmedia) ${vid_pl} "$1" ;;
+            audio/*) ${audio_player} "$1" ;;
+            image/vnd.djvu) [[ $# -le 9 ]] && ${doc_reader} "$@" >/dev/null 2>/dev/null &! ;;
+            image/svg+xml\
+                |application/x-shockwave-flash) ${web_browser} "$1" ;;
+            image/x-xcf) gimp "$1" ;;
+            image/*) ${image_viewer} "$1" ;;
+            application/postscript) [[ $# -le 9 ]] && ${doc_reader} "$@" >/dev/null 2>/dev/null &! ;;
+            application/pdf) [[ $# -le 9 ]] && ${doc_reader} "$@" >/dev/null 2>/dev/null &! ;;
+            application/epub) [[ $# -le 9 ]] && ${doc_reader} "$@" >/dev/null 2>/dev/null &! ;;
+            application/x-bittorrent) ta "$1" ;;
+            application/vnd.ms-opentype\
+                |application/x-font-ttf\
+                |application/vnd.font-fontforge-sfd) fontforge "$1" ;;
+            text/html) $web_browser "$1" ;;
+            text/troff) man -l "$1" ;;
+            *) case "$1" in
+                *.nzb) xchm "$1" 2>/dev/null ;;
+                *.nfo) nzbget -A "$1" 2>/dev/null ;;
+                *.pcf|*.bdf|*.pfb) ${editor} "$1" ;;
+                *.svg) display "$1" ;;
+                *.pps|*.PPS|*.ppt|*.PPT) ${web_browser} "$1" ;;
+                *.rtf|*.doc|*.docx)  libreoffice "$1" 2>/dev/null ;;
+                *.epub|*.ps|*.pdf|*.cb) ${doc_reader} "$@" >/dev/null 2>/dev/null &! ;;
+                *.xls) catdoc -w -s cp1251 "$1" ;;
+                *.xpm) xls2csv -s cp1251 "$1" ;;
+                *.mp3|*.m3u|*.ogg) ${audio_player} "$1" ;;
+                *.mp4|*.avi|*.mpg|*.mpeg|*.mkv|*.ogv|*.f4v|*.m2ts) ${vid_pl} "$1" ;;
+                *) mime_encoding=$(file -L -b --mime-encoding "$1")
+                    case ${mime_encoding} in
+                        *) ${editor} "$1" ;;
+                    esac
+                    ;;
+            esac
+            ;;
+    esac
+else
+    case "$1" in
+        *://*) ${web_browser} "$1" ;;
+        *) echo "file not found: '$1'" >&2 ;;
+    esac
+fi
+}
+{% endhighlight %}
+
+Открывашка по типу xdg-launch своими руками с помощью алиаса e. Бывает
+удобно.
+
+{% highlight shell %}
+function slash-backward-kill-word () {
+    local WORDCHARS="${WORDCHARS:s@/@}"
+    # zle backward-word
+    zle backward-kill-word
+}
+zle -N slash-backward-kill-word
+
+bindkey '\ev' slash-backward-kill-word
+{% endhighlight %}
+
+Удалить текст до последнего слеша, вне зависимости от того что установлено
+в WORDCHARS.
+
 # Aliases
 
 Мне лень комментировать это, просто пожалуйте посмотреть вот этот файл:
@@ -1110,3 +1235,86 @@ function clojure(){
 которые не требует sudo, программы, для которых не нужно использовать
 globbing(например чтобы не экранировать звездочку в find). Также используется
 cope в качестве подсветки для таких программ как du, df, mpc и других.
+
+# Keybindings
+
+Обзор тех кейбиндингов, которых не было выше.
+
+В качестве основной раскладки у меня используется emacs, а vim в качестве
+факультативной:
+
+{% highlight shell %}
+bindkey -e
+bindkey -M emacs "^[w"  vi-cmd-mode
+{% endhighlight %}
+
+Навигация по истории вверх/вниз, с преффиксным поиском в виде того что уже
+набрано. То есть если набрано l, вы жмете вверх, то будет показана последняя
+по истории команда, которая начинается на l.
+
+Хоткеи для поиска по истории. Кроме C-s, пожалуй. Запрет блокировки
+выполняется через stty из 01-init.
+
+{% highlight shell %}
+bindkey '^r' history-incremental-pattern-search-backward
+bindkey '^s' history-incremental-pattern-search-forward
+
+autoload up-line-or-beginning-search
+autoload down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+{% endhighlight %}
+
+Точка не должна ломать инкрементальный поиск:
+
+{% highlight shell %}
+# without this, typing a . aborts incremental history search
+bindkey -M isearch . self-insert
+{% endhighlight %}
+
+C-x Shift-D описывает следующий нажатый хоткей:
+
+{% highlight shell %}
+bindkey -M emacs "^XD" describe-key-briefly
+{% endhighlight %}
+
+С помощью A-c выполняются прыжки вперед/назад с предыдущей директорией
+и текущей:
+
+{% highlight shell %}
+bindkey -s "c" ' cd -'     # A-c to do cycle throw last directory
+{% endhighlight %}
+
+Прыжки по директориям из массива jump_dirs с помощью Alt-1,2,3...:
+
+{% highlight shell %}
+local jump_dirs=( ~/1st_level ~/dw ~/tmp ~/src/1st_level ~/vid/new) 
+for index in $(seq 1 $((${#jump_dirs[@]} ))); do
+    bindkey -s "${index}" "cd ${jump_dirs[$index]/${HOME}/~}"
+done
+{% endhighlight %}
+
+Навигация по меню выполняется преимущественно в стиле vi:
+
+{% highlight shell %}
+# accept a completion and try to complete again by using menu
+# completion; very useful with completing directories
+# by using 'undo' one's got a simple file browser
+bindkey -M menuselect '^o' accept-and-infer-next-history
+
+bindkey '\ei' menu-complete  # menu completion via esc-i
+
+bindkey -M menuselect 'h'     vi-backward-char                
+bindkey -M menuselect 'j'     vi-down-line-or-history         
+bindkey -M menuselect 'k'     vi-up-line-or-history           
+bindkey -M menuselect 'l'     vi-forward-char                 
+bindkey -M menuselect 'i'     accept-and-menu-complete
+bindkey -M menuselect "+"     accept-and-menu-complete
+bindkey -M menuselect "^[[2~" accept-and-menu-complete
+bindkey -M menuselect 'o'     accept-and-infer-next-history
+bindkey -M menuselect '\e^M'  accept-and-menu-complete
+# also use + and INSERT since it's easier to press repeatedly
+{% endhighlight %}
+
