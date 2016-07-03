@@ -670,9 +670,22 @@ function extract() {
     shift
   done
 }
+
+__archive_or_uri(){
+    _alternative \
+        'files:Archives:_files -g "*.(#l)(tar.bz2|tbz2|tbz|tar.gz|tgz|tar.xz|txz|tar.lzma|tar|rar|lzh|7z|zip|jar|deb|bz2|gz|Z|xz|lzma)"' \
+        '_urls:Remote Archives:_urls'
+}
+_simple_extract(){
+    _arguments \
+        '-d[delete original archivefile after extraction]' \
+        '*:Archive Or Uri:__archive_or_uri'
+}
+compdef _simple_extract simple-extract
 {% endhighlight %}
 
-Функция распаковки архивов, была взята, насколько я помню из GRML
+Функция распаковки архивов, была взята, насколько я помню из GRML. Также
+добавлен inline-автокомплит к ней.
 
 {% highlight shell %}
 function up-one-dir   { pushd .. > /dev/null; zle redisplay; zle -M $(pwd);  }
