@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UNIX (s)hell, pt4
+title: UNIX (s)hell, pt2
 categories: personal
 tags: 
   - zsh
