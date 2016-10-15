@@ -1,6 +1,6 @@
 ---
 layout: post
-title: exploringdata и языки программирования
+title: Влияния языков программирования друг на друга
 categories: personal
 tags: 
   - links
