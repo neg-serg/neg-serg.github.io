@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Простой способ собрать gentoo linux из arch
+title: Простой способ собрать Gentoo Linux из Arch
 categories: personal
 tags: 
   - gentoo
