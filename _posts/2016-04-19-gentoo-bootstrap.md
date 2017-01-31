@@ -116,6 +116,15 @@ cd /etc/portage
 < make.conf cat
 {% endhighlight %}
 
+Если не работает dns, а сеть есть это можно исправить вот так:
+
+{% highlight sh %}
+systemctl enable --now systemd-networkd systemd-resolved
+ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+{% endhighlight %}
+
+,набрав это в консоли родительской системы.
+
 Делаем правки по вкусу.
 
 Далее получаем portage.
