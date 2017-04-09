@@ -76,7 +76,7 @@ nicer:
 
 <a href="https://github.com/Airblader/i3">github.com/Airblader/i3</a>
 
-[i3-gaps-screen](https://camo.githubusercontent.com/7da062cb011d81a3551cd34ee2d33886ee6b2e06/687474703a2f2f692e696d6775722e636f6d2f7938735a45366f2e6a7067)
+![i3-gaps-screen](https://camo.githubusercontent.com/7da062cb011d81a3551cd34ee2d33886ee6b2e06/687474703a2f2f692e696d6775722e636f6d2f7938735a45366f2e6a7067)
 
 Just get the README.md to read and git clone it to install or use AUR repo if you are
 Arch Linux user as me.
@@ -972,3 +972,7 @@ and restore(!) fullscreen.
 
 If you have some questions you are welcome to ask me in english or in
 russian. I hope that you will consider this stuff nice and handy as I done.
+
+Finally it looks like this:
+
+![my-i3-screenshot](http://i.imgur.com/fdZkxUj.png)
