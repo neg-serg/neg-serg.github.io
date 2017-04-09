@@ -59,9 +59,7 @@ title: About
 
             </td>
             <td class="about_td">
-                <p><img class="img_noborder" src="/images/{{ site.owner.avatar }}" 
-                    width="60%" height="60%"></a>
-                </p>
+                <p><img class="img_noborder" src="/images/{{ site.owner.avatar }}" width="60%" height="60%"></p>
             </td>
         </tr>
     </table>
