@@ -23,7 +23,7 @@ html { font-family: "iosevka2", Helvetica, Arial, sans-serif; line-height: 1.35;
 body { 
     color: #a0aaaa; 
     background-color: #000000; 
-    background: url('/images/bg.jpg');
+    background: url('/images/bg.png');
     background-clip: border-box !important;
     background-origin: padding-box !important;
     background-attachment: fixed !important;
