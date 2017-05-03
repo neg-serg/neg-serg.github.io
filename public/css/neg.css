@@ -11,8 +11,8 @@
  */
 
 
-@font-face { font-family: 'PragmataPro2'; font-style: normal; font-weight: 400; src: url('/fonts/pragmata.ttf'); }
-@font-face { font-family: 'PragmataPro2bold'; font-style: bold; src: url('/fonts/pragmata_bold.ttf'); }
+@font-face { font-family: 'iosevka2'; font-style: normal; font-weight: 400; src: url('/fonts/iosevka.ttf'); }
+@font-face { font-family: 'iosevka2bold'; font-style: bold; src: url('/fonts/iosevka_bold.ttf'); }
 
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
