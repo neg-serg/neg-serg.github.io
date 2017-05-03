@@ -18,7 +18,7 @@
 
 html, body { margin: 0; padding: 0; }
 
-html { font-family: "PragmataPro2", Helvetica, Arial, sans-serif; line-height: 1.35; }
+html { font-family: "iosevka2", Helvetica, Arial, sans-serif; line-height: 1.35; }
 
 body { 
     color: #a0aaaa; 
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     line-height: 1.25;
     text-rendering: optimizeLegibility;
-    font-family: 'PragmataPro2', sans-serif; color: #aaa; 
+    font-family: 'iosevka2', sans-serif; color: #aaa; 
 }
 
 h1 { font-size: 1.8rem; }
@@ -50,7 +50,7 @@ h3 { margin-top: 1.5rem; font-size: 1.25rem; }
 h4, h5, h6 { margin-top: 1rem; font-size: 1rem; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    font-family: 'PragmataPro2', sans-serif;
+    font-family: 'iosevka2', sans-serif;
     color: #aaa;
     text-decoration: none;
     font-kerning: auto;
@@ -92,7 +92,7 @@ code, pre {
     color: white;
     background-color: #101010;
     font-size: 12pt;
-    font-family: "PragmataPro2";
+    font-family: "iosevka2";
     border-color: transparent;
     overflow: auto;
     word-wrap: normal;
@@ -201,7 +201,7 @@ a.pagination-item:hover { background-color: #f5f5f5; }
 .sidebar-about h1 {
     color: #6a8c8c;
     margin-top: 0;
-    font-family: 'PragmataPro2', serif;
+    font-family: 'iosevka2', serif;
     font-size: 2.25rem;
 }
 
