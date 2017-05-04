@@ -1,12 +1,12 @@
-title:            Neg Code blog
-tagline:          Neg Code blog
-description:      "Neg Code blog"
+title:            Neg blog
+tagline:          Neg blog
+description:      "Neg blog"
 disqus_shortname: Neg
 share:            true
 dropcap:          true
 baseurl:          /
 url:          	  http://neg-serg.github.io
-version:          0.1
+version:          0.2
 gems:             [jekyll-paginate, jekyll-gist]
 
 # Owner/author information
