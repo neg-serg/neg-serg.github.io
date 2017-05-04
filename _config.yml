@@ -5,20 +5,20 @@ disqus_shortname: Neg
 share:            true
 dropcap:          true
 baseurl:          /
-url:        	  http://neg-serg.github.io
+url:          	  http://neg-serg.github.io
 version:          0.1
 gems:             [jekyll-paginate, jekyll-gist]
 
 # Owner/author information
 owner:
-  name:           Sergey Miroshnichenko
-  avatar:         colourful_avatar.png
-  email:          serg.zorg@gmail.com
+  name:             Sergey Miroshnichenko
+  avatar:           colourful_avatar.png
+  email:            serg.zorg@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   # Social networking links used in footer. Update and remove as you like.
-  github:         https://github.com/neg-serg?tab=repositories
+  github:           https://github.com/neg-serg?tab=repositories
   github_username:  neg-serg
-  google_plus:    https://plus.google.com/u/0/102602916593522619858
+  google_plus:      https://plus.google.com/u/0/102602916593522619858
 
 google_analytics:   
 google_verify:      
