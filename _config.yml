@@ -1,11 +1,11 @@
 title:            Neg blog
 tagline:          Neg blog
-description:      "Neg blog"
+description:      ""
 disqus_shortname: Neg
 share:            true
 dropcap:          true
 baseurl:          /
-url:          	  http://neg-serg.github.io
+url:          	  https://neg-serg.github.io
 version:          0.2
 gems:             [jekyll-paginate, jekyll-gist]
 
@@ -42,7 +42,7 @@ markdown:    kramdown
 excerpt_separator: "<!--excerpt-->"
 paginate: 10
 github: [Repository metadata]
-permalink:     pretty
+permalink:   pretty
 
 kramdown:
   auto_ids: true
