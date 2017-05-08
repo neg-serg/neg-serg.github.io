@@ -1,18 +1,13 @@
 /*
  * Neg style
  *
- *
  *    ┏┓╻┏━╸┏━╸   ┏━╸┏━┓┏━┓   ┏━┓╺┳╸╻ ╻╻  ┏━╸
  *    ┃┗┫┣╸ ┃╺┓   ┃  ┗━┓┗━┓   ┗━┓ ┃ ┗┳┛┃  ┣╸
  *    ╹ ╹┗━╸┗━┛   ┗━╸┗━┛┗━┛   ┗━┛ ╹  ╹ ┗━╸┗━╸
  *
- *
  * thx to : [https://github.com/poole/poole, https://github.com/karloespiritu/BlackDoc]
  */
 
-
-@font-face { font-family: 'iosevka2'; font-style: normal; font-weight: 400; src: url('/fonts/iosevka.ttf'); }
-@font-face { font-family: 'iosevka2bold'; font-style: bold; src: url('/fonts/iosevka_bold.ttf'); }
 
 #hideAll {
     position: fixed;
@@ -24,6 +19,9 @@
     z-index: 99; /* Higher than anything else in the document */
 }
 
+@font-face { font-family: 'iosevka2'; font-style: normal; font-weight: 400; src: url('/fonts/iosevka.ttf'); }
+@font-face { font-family: 'iosevka2bold'; font-style: bold; src: url('/fonts/iosevka_bold.ttf'); }
+
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 html, body { margin: 0; padding: 0; }
@@ -32,7 +30,7 @@ html { font-family: "iosevka2", Helvetica, Arial, sans-serif; line-height: 1.35;
 
 body { 
     color: #a0aaaa; 
-    background-color: #000000; 
+    background-color: black; 
     background: url('/images/bg.jpg');
     background-clip: border-box !important;
     background-origin: padding-box !important;
