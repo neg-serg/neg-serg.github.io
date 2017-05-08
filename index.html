@@ -14,7 +14,7 @@ title: Home
     <span class="post-date">{{ post.date | date: '%b %-d, %Y' }}</span>
     {{ post.excerpt }}
     {% if post.content contains site.excerpt_separator %}
-      <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
+      <a href="{{ site.github.url }}{{ post.url }}">[Read more]</a>
     {% endif %}
     </div>
     {% endfor %}
@@ -24,12 +24,12 @@ title: Home
   {% if paginator.next_page %}
     <a class="pagination-item older" href="{{ paginator.next_page_path }}">Older</a>
   {% else %}
-    <span class="pagination-item older">Older</span>
+    <span class="pagination-item older">[Older]</span>
   {% endif %}
 
   {% if paginator.previous_page %}
     <a class="pagination-item newer" href="{{ paginator.previous_page_path }}">Newer</a>
   {% else %}
-    <span class="pagination-item newer">Newer</span>
+    <span class="pagination-item newer">[Newer]</span>
   {% endif %}
 </div>

@@ -56,7 +56,6 @@ title: lslogins neg
                 <ul>
                     <li>Резюме: <a href="/public/cv/cv.pdf">cv.pdf</a></li>
                 </ul>
-
             </td>
             <td class="about_td">
                 <p><img class="img_noborder" src="/images/{{ site.owner.avatar }}" width="60%" height="60%"></p>
