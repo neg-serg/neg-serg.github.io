@@ -6,7 +6,7 @@ share:            true
 dropcap:          true
 baseurl:          /
 url:          	  https://neg-serg.github.io
-version:          0.2
+version:          0.3
 gems:             [jekyll-paginate, jekyll-gist]
 
 # Owner/author information
