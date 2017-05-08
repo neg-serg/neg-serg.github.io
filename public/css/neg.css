@@ -14,6 +14,16 @@
 @font-face { font-family: 'iosevka2'; font-style: normal; font-weight: 400; src: url('/fonts/iosevka.ttf'); }
 @font-face { font-family: 'iosevka2bold'; font-style: bold; src: url('/fonts/iosevka_bold.ttf'); }
 
+#hideAll {
+    position: fixed;
+    left: 0px; 
+    right: 0px; 
+    top: 0px; 
+    bottom: 0px; 
+    background-color: black;
+    z-index: 99; /* Higher than anything else in the document */
+}
+
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 html, body { margin: 0; padding: 0; }
