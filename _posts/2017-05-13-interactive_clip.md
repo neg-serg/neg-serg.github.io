@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Interactive clip which tracks everyone's mouse cursor position, to
-show it to everyone
+title: Interactive clip which tracks everyone's mouse cursor position, to show it to everyone
 categories: personal
 tags: 
   - music
@@ -15,7 +14,7 @@ published: true
 
 If you are feeling bored try this:
 <a href="http://donottouch.org/">http://donottouch.org/</a>
-[donttouch](http://i.imgur.com/TOJkM7k.png)
+![donttouch](http://i.imgur.com/TOJkM7k.png)
 
 This records you actions like mouse clicks/movements to show it to other
 listners. I think that it's pretty nice idea but nonperfect implementation:
