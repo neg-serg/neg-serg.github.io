@@ -2,9 +2,7 @@
 layout: post
 title: A cool story about my migration from notion to i3
 categories: personal
-tags: 
-  - i3
-  - notion
+tags: i3 notion
 comments: true
 mathjax: null
 featured: true

@@ -2,8 +2,7 @@
 layout: post
 title: UNIX (s)hell, pt4
 categories: personal
-tags: 
-  - zsh
+tags: zsh
 comments: true
 mathjax: null
 featured: true

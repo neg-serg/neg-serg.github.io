@@ -2,8 +2,7 @@
 layout: post
 title: tutorials по vim
 categories: personal
-tags: 
-  - links
+tags: links
 comments: true
 mathjax: null
 featured: true

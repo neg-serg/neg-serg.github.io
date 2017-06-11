@@ -2,9 +2,7 @@
 layout: post
 title: Gap buffer и редактирование текста.
 categories: personal
-tags: 
-  - coding
-  - emacs
+tags: coding emacs
 comments: true
 mathjax: null
 featured: true

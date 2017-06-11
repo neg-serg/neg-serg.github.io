@@ -2,9 +2,7 @@
 layout: post
 title: Будущее GUI
 categories: personal
-tags: 
-  - electron
-  - atom
+tags: electron atom
 comments: true
 mathjax: null
 featured: true

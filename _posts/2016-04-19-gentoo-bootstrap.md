@@ -2,9 +2,7 @@
 layout: post
 title: Простой способ собрать Gentoo Linux из Arch
 categories: personal
-tags: 
-  - gentoo
-  - systemd
+tags: gentoo systemd
 comments: true
 mathjax: null
 featured: true

@@ -2,9 +2,7 @@
 layout: post
 title: zsh-builtin xargs
 categories: personal
-tags: 
-  - zsh
-  - xargs
+tags: zsh xargs
 comments: true
 mathjax: null
 featured: true

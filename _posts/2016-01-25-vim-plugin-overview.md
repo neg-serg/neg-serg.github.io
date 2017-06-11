@@ -2,10 +2,7 @@
 layout: post
 title: Vim - обзор плагинов
 categories: personal
-tags: 
-  - vim
-  - plugin
-  - overview
+tags: vim plugin overview
 comments: true
 mathjax: null
 featured: true

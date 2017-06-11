@@ -6,7 +6,7 @@ share:            true
 dropcap:          true
 baseurl:          /
 url:          	  https://neg-serg.github.io
-version:          0.3
+version:          0.4
 gems:             [jekyll-paginate, jekyll-gist]
 
 # Owner/author information
@@ -20,9 +20,20 @@ owner:
   github_username:  neg-serg
   google_plus:      https://plus.google.com/u/0/102602916593522619858
 
+engine: erb
+
+relative_permalinks: false
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+# tag_permalink_style: pretty
+
+tag_page_data:
+  sitemap: true
+
 google_analytics:   
 google_verify:      
-    
+
 # Links to include in footer navigation
 # For external links add external: true
 links:

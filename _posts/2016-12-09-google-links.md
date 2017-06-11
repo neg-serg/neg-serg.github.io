@@ -2,8 +2,7 @@
 layout: post
 title: Interesting google-related links
 categories: personal
-tags: 
-  - links
+tags: links
 comments: true
 mathjax: null
 featured: true

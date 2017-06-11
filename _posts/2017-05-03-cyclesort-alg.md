@@ -2,9 +2,7 @@
 layout: post
 title: Cyclesort&#x3a; unusual O(n+m) sorting algorithm
 categories: personal
-tags: 
-  - algorithm
-  - sorting
+tags: algorithm sorting
 comments: true
 mathjax: null
 featured: true

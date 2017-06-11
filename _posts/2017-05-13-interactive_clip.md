@@ -2,10 +2,7 @@
 layout: post
 title: Interactive clip which tracks everyone's mouse cursor position, to show it to everyone
 categories: personal
-tags: 
-  - music
-  - art
-  - interactive
+tags: music art interactive
 comments: true
 mathjax: null
 featured: true

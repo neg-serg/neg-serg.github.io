@@ -2,8 +2,7 @@
 layout: post
 title: Где можно найти обои
 categories: personal
-tags: 
-  - design
+tags: design
 comments: true
 mathjax: null
 featured: true

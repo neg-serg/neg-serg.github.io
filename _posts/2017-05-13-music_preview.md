@@ -2,8 +2,7 @@
 layout: post
 title: Nice music previewer for various music genres&#47;tags
 categories: personal
-tags: 
-  - music
+tags: music
 comments: true
 mathjax: null
 featured: true

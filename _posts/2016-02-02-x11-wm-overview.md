@@ -2,8 +2,7 @@
 layout: post
 title: Обзор оконных менеджеров
 categories: personal
-tags: 
-  - notion
+tags: notion
 comments: true
 mathjax: null
 featured: true

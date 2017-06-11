@@ -2,8 +2,7 @@
 layout: post
 title: Filenames and pathnames in shell
 categories: personal
-tags: 
-  - shell
+tags: shell
 comments: true
 mathjax: null
 featured: true

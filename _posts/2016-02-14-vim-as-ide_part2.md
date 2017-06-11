@@ -2,12 +2,7 @@
 layout: post
 title: Vim as IDE часть II
 categories: personal
-tags: 
-  - vim
-  - ide
-  - ycm
-  - rtags
-  - clang
+tags: vim ide ycm rtags clang
 comments: true
 mathjax: null
 featured: true

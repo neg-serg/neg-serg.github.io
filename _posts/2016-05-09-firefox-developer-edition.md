@@ -2,9 +2,7 @@
 layout: post
 title: Firefox как Web IDE
 categories: personal
-tags: 
-  - firefox
-  - ide
+tags: firefox ide
 comments: true
 mathjax: null
 featured: true

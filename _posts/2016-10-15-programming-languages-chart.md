@@ -2,8 +2,7 @@
 layout: post
 title: Влияния языков программирования друг на друга
 categories: personal
-tags: 
-  - links
+tags: links
 comments: true
 mathjax: null
 featured: true

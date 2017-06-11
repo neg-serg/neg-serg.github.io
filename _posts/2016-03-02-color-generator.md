@@ -2,8 +2,7 @@
 layout: post
 title: Сервисы для подбора цветов
 categories: personal
-tags: 
-  - design
+tags: design
 comments: true
 mathjax: null
 featured: true

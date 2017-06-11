@@ -2,8 +2,7 @@
 layout: post
 title: Goëtia PostCSS names
 categories: personal
-tags: 
-  - fun
+tags: fun
 comments: true
 mathjax: null
 featured: true
