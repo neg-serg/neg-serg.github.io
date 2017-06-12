@@ -1,27 +1,12 @@
 <nav>
     <div id="logo">
         <a href="{{ site.baseurl }}/">
-            {% include icons/favicon.svg %}
-            <div>
-                MrLoh<span>.se</span>
-            </div>
+            <img src="/public/skull.jpg">
         </a>
     </div>
     <ul>
-        <li {% if page.title == 'About' %} class="active" {% endif %}>
-            <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
-        </li>
-        <!-- <li>
-            <a href="https://www.flickr.com/photos/flojoto/">Photos</a>
-        </li> -->
-        <li {% if page.type == 'post' %} class="active" {% endif %}>
-            <a href="{{ site.baseurl }}/">Blog</a>
-        </li>
         <li {% if page.type == 'archive' %} class="active" {% endif %}>
-            <a href="{{ '/archive' | prepend: site.baseurl }}">Archive</a>
-        </li>
-        <li>
-            <a href="mailto:{{ site.email }}">Contact</a>
+            <a href="{{ site.url }}/archive/index.html">Archive</a>
         </li>
     </ul>
 </nav>
