@@ -4,7 +4,14 @@
 
 <script>
   var cloud = d3.layout.cloud;
-  var fill = d3.scale.category20();
+  var enum_= [
+    '#33303b', '#4f4b58', '#87404f', '#CF4F88', 
+    '#4c9882', '#53A6A6', '#71949a', '#BF85CC', 
+    '#615772', '#4779B3', '#783e57', '#7F62B3', 
+    '#554757', '#47959E', '#c0a79a', '#617287'
+  ];
+  var fill = d3.scale.quantile().domain([0,15]).range(enum_);
+
   var tags_map = {{ site_tags | json }};
 
   var layout = cloud()
