@@ -7,7 +7,9 @@ dropcap:          true
 baseurl:          /
 url:          	  https://neg-serg.github.io
 version:          0.4
-gems:             [jekyll-paginate, jekyll-gist]
+
+gems:
+  - octopress-paginate
 
 # Owner/author information
 owner:
@@ -26,8 +28,26 @@ encoding: utf-8
 tag_page_data:
   sitemap: true
 
+tag_page_layout: tag_page
+tag_page_dir: tag
+
 google_analytics:   
 google_verify:      
+
+paginate:
+  collection:   posts
+  per_page:     10             # maximum number of items per page
+  limit:        5              # Maximum number of pages to paginate (false for unlimited)
+  # permalink:    /page:num/   # pagination path (relative to template page)
+  permalink: "/page-:num/"      # => /page-2/index.html
+  permalink: "/page/:num/"      # => /page/2/index.html
+  permalink: "/:num/"           # => /2/index.html
+  title_suffix: " - page :num" # Append to template's page title
+  category:     ''             # Paginate items in this category
+  categories:   []             # Paginate items in any of these categories
+  tag:          ''             # Paginate items tagged with this tag
+  tags:         []             # Paginate items tagged with any of these tags
+  reversed:     false          # Reverse the order of the documents
 
 # Links to include in footer navigation
 # For external links add external: true
@@ -48,9 +68,8 @@ markdown:    kramdown
 excerpt_separator: "<!--excerpt-->"
 paginate: 10
 github: [Repository metadata]
-permalink:   pretty
-# relative_permalinks: false
-permalink: '/:year/:month/:title'
+permalink:  pretty
+permalink: '/:year/:month/:title/'
 
 kramdown:
   auto_ids: true
